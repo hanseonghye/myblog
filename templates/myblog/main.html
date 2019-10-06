@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %} main {% endblock %}
+
+{% load staticfiles %}
+{%  block extrastyle %}
+    <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+    <div class="content-1">
+        <div class="main-left">
+            <div class="user1">
+                <div class="user1-title">블로그</div>
+                <div class="user1-name">한성혜</div>
+                <div class="user1-desc">한성혜의 개발 블로그</div>
+            </div>
+
+
+            <div class="user2">
+                hans12312@naver.com
+            </div>
+
+            <div class="main-category">
+                <p class="cate title">
+                    <span style="display: none;">0</span>
+                    전체보기
+                </p>
+                {% for category in categorys %}
+                    <p class="cate category">
+                        <span style="display: none;">{{ category.pk }}</span>
+                        {{ category.name }} ({{ category.post_num }})
+                    </p>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="main-right">
+            <div class="posts" style="">
+                <ul class="post-list">
+                </ul>
+
+                <div class="post">
+                    <div class="real_post">
+{##}
+{#                    <h2 class="title">#}
+{#                        <a href="#">title</a>#}
+{#                    </h2>#}
+{#                    <div class="post_container">#}
+{#                        <h3 class="right_date">none#}
+{#                            <span class="right_date">2019</span>#}
+{#                            <span class="right_date">/</span>#}
+{#                            <span class="right_date">2019</span>#}
+{#                        </h3>#}
+{#                        <article class="post-content">#}
+{#                            <h5>dddd</h5>#}
+{#                            <h5>dddd</h5>#}
+{#                            <h5>dddd</h5>#}
+{#                            <h5>dddd</h5>#}
+{#                            <h5>dddd</h5>#}
+{#                        </article>#}
+{#                    </div>#}
+                    </div>
+
+                    <div id="disqus" style="display: none">
+                        {% load disqus_tags %}
+                        {% disqus_show_comments %}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/js/home.js"></script>
+{% endblock %}
