@@ -45,17 +45,17 @@
 }
 
 
-.content-1 div.main-category{
+.content-1 div.category{
     border-top: 1px solid #eee;
 }
 
-.content-1 div.main-category p.title{
+.content-1 div.category p.title{
     margin-bottom: 5px;
     color: #000000;
     font-size: 16px;
 }
 
-.content-1 div.main-category p.category{
+.content-1 div.category p.category{
     margin-top: 0;
     margin-bottom: 0;
     color: #6a737d;
@@ -69,6 +69,9 @@
     float: left;
 }
 
+div.posts {
+    margin-top: 60px;
+}
 
 div.posts ul.post-list {
     list-style: none;

@@ -3,6 +3,7 @@
 }
 
 body {
+    padding-top:100px;
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -14,4 +15,37 @@ body {
 
 
 div#content {
+}
+
+
+nav {
+    top:0;
+}
+
+nav ul {
+    top:0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li.selected {
+    border-bottom: 2px solid #e36209;
+}
+
+nav ul li {
+    top:0;
+    float: left;
+    padding: 0;
+    height: 50px;
+    color: #586069;
+    border-bottom: 1px solid #d1d5da;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #586069;
+    padding: 0 20px;
+    display: inline-block;
+    line-height: 60px;
 }

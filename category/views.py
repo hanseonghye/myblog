@@ -1,15 +1,35 @@
-from rest_framework import status
-from myModule.myGenerics import *
-from rest_framework.response import Response
+from django.shortcuts import render
+from django.views.generic import ListView
 
-from category.serializers import CategoryPostSimpleSerializer
+from category.models import Category
 from post.models import Post
 
 
-class CategoryPostLV(ListAPIView):
-    serializer_class = CategoryPostSimpleSerializer
+def getallcategory(request):
+    data = dict()
+    data['categorys'] =Category.objects.filter(use_tf=True)
+    return render(request, "myblog/set_category.html", data)
+
+
+class CategoryPostLV(ListView):
+    template_name = 'post/list.html'
+    model=Post
+    context_object_name = "posts"
+
+
     def get_queryset(self):
         if self.kwargs['pk'] == 0:
             return Post.objects.filter(use_tf=True);
         else :
             return Post.objects.filter(category = self.kwargs['pk'], use_tf=True)
+
+
+class CategoryNamePostLV(ListView):
+    template_name = 'post/list.html'
+    model=Post
+    context_object_name = "posts"
+
+
+    def get_queryset(self):
+        return Post.objects.filter(category__name=self.kwargs['name'],use_tf=True);
+

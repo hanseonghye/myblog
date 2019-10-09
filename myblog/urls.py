@@ -24,7 +24,7 @@ urlpatterns = [
     path('', MainView.as_view(), name='main'),
     path('category/', include('category.urls'), name='category'),
     path('post/', include('post.urls'), name='post'),
-    path('post/<int:post_id>', post_detail, name='markdown'),
+    # path('post/<int:post_id>', post_detail, name='markdown'),
 
     url(r'^markdownx/', include('markdownx.urls')),
 ]

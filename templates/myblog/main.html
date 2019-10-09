@@ -21,62 +21,28 @@
             <div class="user2">
                 hans12312@naver.com
             </div>
-
-            <div class="main-category">
-                <p class="cate title">
-                    <span style="display: none;">0</span>
-                    전체보기
-                </p>
-                {% for category in categorys %}
-                    <p class="cate category">
-                        <span style="display: none;">{{ category.pk }}</span>
-                        {{ category.name }} ({{ category.post_num }})
-                    </p>
-
-                {% endfor %}
+            <div class="category">
             </div>
         </div>
 
         <div class="main-right">
-            <div class="posts" style="">
-                <ul class="post-list">
+            <nav>
+                <ul>
+                    <li class="selected"><a href="{% url 'main' %}">Home</a></li>
+                    <li><a href="{% url 'category:index' 0 %}">Post</a></li>
+                    <li><a href="#">Tag</a></li>
                 </ul>
-
-                <div class="post">
-                    <div class="real_post">
-{##}
-{#                    <h2 class="title">#}
-{#                        <a href="#">title</a>#}
-{#                    </h2>#}
-{#                    <div class="post_container">#}
-{#                        <h3 class="right_date">none#}
-{#                            <span class="right_date">2019</span>#}
-{#                            <span class="right_date">/</span>#}
-{#                            <span class="right_date">2019</span>#}
-{#                        </h3>#}
-{#                        <article class="post-content">#}
-{#                            <h5>dddd</h5>#}
-{#                            <h5>dddd</h5>#}
-{#                            <h5>dddd</h5>#}
-{#                            <h5>dddd</h5>#}
-{#                            <h5>dddd</h5>#}
-{#                        </article>#}
-{#                    </div>#}
-                    </div>
-
-                    <div id="disqus" style="display: none">
-                        {% load disqus_tags %}
-                        {% disqus_show_comments %}
-                    </div>
-                </div>
-
+            </nav>
+            <div class="posts" style="">
+                {% block home %}{% endblock %}
+                {% block post-list %}{% endblock %}
+                {% block post %}{% endblock %}
             </div>
-
         </div>
     </div>
 {% endblock %}
 
 {% block extrascript %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/static/js/home.js"></script>
+    <script src="/static/js/get_category.js"></script>
 {% endblock %}

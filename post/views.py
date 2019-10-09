@@ -17,12 +17,8 @@ def post_detail(request, post_id):
     )
 
 
-class PostDV(RetrieveAPIView):
-    queryset = Post.objects.filter(use_tf=True)
-    serializer_class = PostSerializer
-    lookup_field = 'pk'
 
-
-class PostDV2(DetailView):
+class PostDV(DetailView):
     model = Post
     template_name = 'post/detail.html'
+    lookup_field = 'pk'

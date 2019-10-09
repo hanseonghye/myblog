@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "myblog/main.html" %}
 
-</body>
-</html>
+{% block title %} post/detail {% endblock %}
+{% block post %}
+<div class="post">
+    <div class="real_post">
+        <h2 class="title">
+            <a href="#">{{ post.title }}</a>
+        </h2>
+        <div class="post_container">
+            <h3 class="right_date">
+                <span class="right_date">{{ post.ins_dt }}</span>
+                <span class="right_date">/</span>
+                <span class="right_date">{{ post.upd_dt }}</span>
+            </h3>
+            {{ post.formatted_markdown|safe }}
+
+        </div>
+
+    </div>
+
+    <div id="disqus">
+        {% load disqus_tags %}
+        {% disqus_show_comments %}
+    </div>
+</div>
+
+{% endblock %}

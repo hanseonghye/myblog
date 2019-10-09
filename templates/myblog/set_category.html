@@ -1,0 +1,13 @@
+<p class="cate title">
+    <a href="{% url 'category:index' 0 %}">
+    전체보기
+    </a>
+</p>
+{% for category in categorys %}
+    <p class="cate category">
+        <a href="{% url 'category:index' category.pk %}">
+            {{ category.name }} ({{ category.post_num }})
+        </a>
+    </p>
+
+{% endfor %}

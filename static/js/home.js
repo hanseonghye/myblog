@@ -16,7 +16,7 @@ $(document).ready(function(){
                     for(i in posts) {
                         html += "<li class='post'>"
                         html += "<input type='hidden' value='"+posts[i].pk+"'/>"
-
+w
                         html += "<h2 class='post_title'>" + posts[i].title + "</h2>"
                         // html += "<p>" + posts[i].formatted_markdown + "</p>"
 
