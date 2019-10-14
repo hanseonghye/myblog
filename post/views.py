@@ -1,24 +1,14 @@
-from django.shortcuts import render
-from django.views.generic import DetailView
-
-from myModule.myGenerics import RetrieveAPIView
+from django.views.generic import DetailView, ListView
 from post.models import Post
-from post.serializers import PostSerializer
-
-
-def post_detail(request, post_id):
-    post = Post.objects.get(pk = post_id)
-    return render(
-        request,
-        'post_detail.html',
-        {
-            'post' : post,
-        }
-    )
-
 
 
 class PostDV(DetailView):
     model = Post
     template_name = 'post/detail.html'
     lookup_field = 'pk'
+
+
+class PostLV(ListView):
+    model = Post
+    template_name = 'myblog/home.html'
+    queryset = Post.objects.

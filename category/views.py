@@ -11,6 +11,11 @@ def getallcategory(request):
     return render(request, "myblog/set_category.html", data)
 
 
+class GetMulCategoryLV(ListView):
+    template_name = 'myblog/home.html'
+    model = Category
+    queryset = Category.objects.filter()
+
 class CategoryPostLV(ListView):
     template_name = 'post/list.html'
     model=Post

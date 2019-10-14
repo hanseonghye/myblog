@@ -17,14 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from myblog.views import MainView
-from post.views import post_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MainView.as_view(), name='main'),
     path('category/', include('category.urls'), name='category'),
     path('post/', include('post.urls'), name='post'),
-    # path('post/<int:post_id>', post_detail, name='markdown'),
 
     url(r'^markdownx/', include('markdownx.urls')),
 ]
