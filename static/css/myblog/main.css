@@ -182,3 +182,12 @@ article.post-content {
 div#disqus {
     margin-top: 50px;
 }
+
+
+ul.post-list-home p.post-category {
+    font-size: 20px;
+}
+
+ul.post-list-home p.post-post-title {
+    padding-left: 30px;
+}

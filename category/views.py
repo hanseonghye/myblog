@@ -11,10 +11,23 @@ def getallcategory(request):
     return render(request, "myblog/set_category.html", data)
 
 
+def getpostpercategory(request):
+    data = dict()
+    data['posts'] = dict()
+    categorys = Category.objects.filter(use_tf = True)
+
+    for category in categorys :
+        data["posts"][category.name] = Post.objects.filter(category = category)
+    print (data)
+    print (type(data["posts"]))
+    return render(request, "myblog/home.html",data)
+
+
 class GetMulCategoryLV(ListView):
     template_name = 'myblog/home.html'
     model = Category
     queryset = Category.objects.filter()
+
 
 class CategoryPostLV(ListView):
     template_name = 'post/list.html'

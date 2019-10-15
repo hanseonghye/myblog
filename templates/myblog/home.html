@@ -4,17 +4,13 @@
 
 {% block home %}
 <ul class="post-list-home">
-    {% for post in posts %}
-        <li class="post">
-            <h2 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h2>
-            {% for tag in post.tags %}
-                <ul class="tag-list">
-                </ul>
-            {% endfor %}
-            <div class="post-info">
-                {{ post.ins_dt }}
-            </div>
-        </li>
+    {% for category, ps in posts.items %}
+        <p class="post-category">{{ category }}</p>
+        {% for p in ps %}
+            <p class="post-post-title">{{ p.title }}</p>
+        {% endfor %}
+        <hr>
+
     {% endfor %}
 </ul>
 {% endblock %}
