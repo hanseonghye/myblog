@@ -1,28 +1,33 @@
-{% extends "myblog/main.html" %}
+{% extends "base.html" %}
 
 {% block title %} post/detail {% endblock %}
-{% block post %}
-<div class="post">
-    <div class="real_post">
-        <h2 class="title">
-            <a href="#">{{ post.title }}</a>
-        </h2>
-        <div class="post_container">
-            <h3 class="right_date">
-                <span class="right_date">{{ post.ins_dt }}</span>
-                <span class="right_date">/</span>
-                <span class="right_date">{{ post.upd_dt }}</span>
-            </h3>
-            {{ post.formatted_markdown|safe }}
 
-        </div>
+{% load staticfiles %}
+{%  block extrastyle %}
+    <link href="/static/css/post/detail.css" rel="stylesheet" type="text/css">
+{% endblock %}
 
+{% block content %}
+
+<div class="gnb text-right"></div>
+<div class="top_subject">
+    <p class="subject1 text-center">{{ post.title }}</p>
+    <p class="subject2 text-right padding-right">ins : {{ post.ins_dt }} / upd : {{ post.upd_dt }}</p>
+</div>
+<div class="post-content">
+    <div class="content wrap-left">
+
+        {{ post.formatted_markdown|safe }}
     </div>
 
-    <div id="disqus">
+    <div id="disqus" class=" wrap-left">
         {% load disqus_tags %}
         {% disqus_show_comments %}
     </div>
 </div>
 
+{% endblock %}
+
+{% block extrascript %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% endblock %}
