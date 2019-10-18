@@ -66,3 +66,28 @@ div.post-content div#disqus {
 div.post-content div.wrap-left{
     margin-left : 20px;
 }
+
+div.col-md-12 {
+    width:100%;
+    float:left;
+}
+
+
+div.col-md-6 {
+    width:50%;
+    float:left;
+}
+
+div.footer {
+
+}
+
+
+
+div.footer p.category-title{
+    font-weight: 700;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}

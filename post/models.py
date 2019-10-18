@@ -1,4 +1,3 @@
-import requests
 from django.db import models
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
@@ -14,6 +13,7 @@ class Post(models.Model):
     upd_dt = models.DateTimeField(auto_now=True)
     use_tf = models.BooleanField(default=True)
 
+
     class Meta:
         ordering = ['-ins_dt']
 
@@ -21,9 +21,6 @@ class Post(models.Model):
     def formatted_markdown(self):
         return markdownify(self.content)
 
-class Tag(models.Model):
-    pass
-    name = models.CharField(max_length=50, null=False);
 
 
 

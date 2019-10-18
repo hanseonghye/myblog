@@ -24,5 +24,6 @@ urlpatterns = [
     path('category/', include('category.urls'), name='category'),
     path('post/', include('post.urls'), name='post'),
 
+
     url(r'^markdownx/', include('markdownx.urls')),
 ]

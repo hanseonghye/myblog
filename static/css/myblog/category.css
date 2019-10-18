@@ -1,0 +1,16 @@
+div#category{
+    border-top: 1px solid #eee;
+}
+
+div#category p.title{
+    margin-bottom: 5px;
+    color: #000000;
+    font-size: 16px;
+}
+
+div#category p.category{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #6a737d;
+    font-size: 14px;
+}

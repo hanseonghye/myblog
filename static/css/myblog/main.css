@@ -45,17 +45,17 @@
 }
 
 
-.content-1 div.category{
+div#category{
     border-top: 1px solid #eee;
 }
 
-.content-1 div.category p.title{
+div#category p.title{
     margin-bottom: 5px;
     color: #000000;
     font-size: 16px;
 }
 
-.content-1 div.category p.category{
+div#category p.category{
     margin-top: 0;
     margin-bottom: 0;
     color: #6a737d;
