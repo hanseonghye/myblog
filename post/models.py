@@ -1,6 +1,7 @@
 from django.db import models
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
+from taggit.managers import TaggableManager
 
 from category.models import Category
 
@@ -12,6 +13,7 @@ class Post(models.Model):
     ins_dt = models.DateTimeField(auto_now_add=True)
     upd_dt = models.DateTimeField(auto_now=True)
     use_tf = models.BooleanField(default=True)
+    tags = TaggableManager()
 
 
     class Meta:
@@ -20,6 +22,12 @@ class Post(models.Model):
     @property
     def formatted_markdown(self):
         return markdownify(self.content)
+
+
+    @property
+    def get_tag(self):
+        return self.tags.most_common()
+
 
 
 

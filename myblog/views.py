@@ -10,7 +10,6 @@ class MainView(TemplateView):
 
     def get_context_data(self, **kwargs):
         data = dict();
-        data['categorys'] = Category.objects.filter(use_tf=True)
         data['posts'] = Post.objects.filter(use_tf = True)
         return data
 

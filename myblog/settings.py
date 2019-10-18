@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'disqus',
     'django.contrib.sites',
     'taggit',
+    'taggit_templatetags2',
 
 ]
 

@@ -1,0 +1,28 @@
+{% extends "myblog/main.html" %}
+
+{% block title %} post/tags {% endblock %}
+
+
+{% block tag-list %}
+    <br/>
+    <ul class="tag-list">
+        {% load taggit_templatetags2_tags %}
+        {% get_taglist as tags for 'post.Post' %}
+        {% for tag in tags %}
+            <li class="tag-list" onclick="get_tag_post({{ tag.id }})">
+                {{ tag }} ({{tag.num_times}})
+            </li>
+        {% endfor %}
+    </ul>
+
+    <br style="height: 50px;">
+
+    <div id="posts"></div>
+
+{% endblock %}
+
+
+{% block extrascript %}
+    <script src="/static/js/get_category.js"></script>
+    <script src="/static/js/get_tag_post.js"></script>
+{% endblock %}

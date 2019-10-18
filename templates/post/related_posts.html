@@ -1,0 +1,23 @@
+{% if posts %}
+    <ul class="post-list">
+    {% for post in posts %}
+        <li>
+            <strong>
+                <span class="title">
+                    <a href="{% url 'post:index' post.pk %}">{{ post.title }}</a>
+                    <span class="title-right">
+                        {{ post.category }} /
+
+                    {% if post.get_tag %}
+                        {% for tag in post.get_tag %}
+                            {{ tag }},
+                        {% endfor %}
+                    {% endif %}
+                    </span>
+                </span>
+            </strong>
+
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}

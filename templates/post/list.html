@@ -7,12 +7,16 @@
     {% for post in posts %}
         <li class="post">
             <h2 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h2>
-            {% for tag in post.tags %}
+            {% if post.get_tag %}
                 <ul class="tag-list">
+                {% for tag in post.get_tag %}
+                        <li>{{ tag }}</li>
+                    {% endfor %}
                 </ul>
-            {% endfor %}
+                <br/>
+            {% endif %}
             <div class="post-info">
-                {{ post.ins_dt }}
+                <p>{{ post.ins_dt }}</p>
             </div>
         </li>
     {% endfor %}

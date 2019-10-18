@@ -30,7 +30,7 @@ nav ul {
 }
 
 nav ul li.selected {
-    border-bottom: 2px solid #e36209;
+    border-bottom: 5px solid #FFEDA5;
 }
 
 nav ul li {
@@ -38,14 +38,70 @@ nav ul li {
     float: left;
     padding: 0;
     height: 50px;
-    color: #586069;
-    border-bottom: 1px solid #d1d5da;
+    color: #ffffff;
+    background-color: #1ecfff;
+}
+
+nav ul li:first-child{
+    border-top-left-radius: 5px;
+}
+nav ul li:last-child{
+    border-top-right-radius: 5px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #586069;
+    color: #ffffff;
     padding: 0 20px;
     display: inline-block;
     line-height: 60px;
+}
+
+
+div.col-md-12 {
+    width:100%;
+    float:left;
+}
+
+
+div.col-md-6 {
+    width:50%;
+    float:left;
+}
+
+div.col-md-8 {
+    width:66%;
+    float:left;
+}
+
+div.col-md-4 {
+    width:33%;
+    float:left;
+}
+
+div.col-md-3 {
+    width: 25%;
+    float: left;
+}
+
+div.col-md-9 {
+    width:75%;
+    float: left;
+}
+
+a, p, h3, h4, h5 {
+    text-decoration:none;
+    color:#000;
+    font-family: 'Nanum Gothic Coding', sans-serif;
+}
+
+
+hr.yellow_hr{
+    clear:both;
+    border: solid 2px #FFEDA5;
+}
+
+hr.black_hr{
+    clear:both;
+    border: solid 2px #000000;
 }

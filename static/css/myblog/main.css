@@ -1,25 +1,17 @@
 .content-1 {
     max-width: 1012px;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-top: 25px;
-    margin-left: 50px;
-}
-
-.main-left {
-    width: 20%;
-    padding-right: 16px;
-    float: left;
+    margin: auto;
 }
 
 
-.main-left .user1 div.user1-title {
+
+div.user1-title {
     font-size: 26px;
     line-height: 30px;
     font-weight: 600;
 }
 
-.main-left .user1 div.user1-name {
+div.user1-name {
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
@@ -27,15 +19,14 @@
     color: #666;
 }
 
-.main-left .user1 div.user1-desc {
+div.user1-desc {
     margin-bottom: 12px;
     color: #6a737d;
     font-size: 14px;
 }
 
 
-.main-left div.user2{
-    border-top: 1px solid #eee;
+div.user2{
 }
 
 
@@ -45,9 +36,6 @@
 }
 
 
-div#category{
-    border-top: 1px solid #eee;
-}
 
 div#category p.title{
     margin-bottom: 5px;
@@ -62,16 +50,6 @@ div#category p.category{
     font-size: 14px;
 }
 
-
-.main-right {
-    width: 70%;
-    padding-left: 20px;
-    float: left;
-}
-
-div.posts {
-    margin-top: 60px;
-}
 
 div.posts ul.post-list {
     list-style: none;
@@ -98,24 +76,23 @@ div.posts ul.post-list li.post p {
 }
 
 
-div.posts ul.tag-list {
+ul.tag-list {
     padding: 4px 0;
     list-style: none;
     margin: 0;
 }
 
-div.posts ul.tag-list li {
+ul.tag-list li {
     float: left;
     margin: 0 0.5em 0.5em 0;
     padding: 0.3em 0.9em;
     background: #f1f8ff;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
     border-radius: 3px;
     color: #0366d6;
     font-size: 12px;
 }
-div.posts ul.tag-list li a {
+
+ul.tag-list li a {
     color: #0366d6;
     text-decoration: none;
  }
@@ -179,9 +156,9 @@ article.post-content {
 }
 
 
-div#disqus {
-    margin-top: 50px;
-}
+/*div#disqus {*/
+/*    margin-top: 50px;*/
+/*}*/
 
 
 ul.post-list-home p.post-category {

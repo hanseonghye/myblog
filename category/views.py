@@ -18,8 +18,6 @@ def getpostpercategory(request):
 
     for category in categorys :
         data["posts"][category.name] = Post.objects.filter(category = category)
-    print (data)
-    print (type(data["posts"]))
     return render(request, "myblog/home.html",data)
 
 

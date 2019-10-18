@@ -10,19 +10,49 @@
 div.gnb {
     font-size: .8rem;
     padding: 1px;
-    background-color: #259ce0;
+    background-color: #2286FF;
+    color: #ffffff;
+    padding-right: 50px;
 }
 
+
+div.gnb a {
+    font-family: 'Nanum Gothic Coding', sans-serif;
+    color: #ffffff;
+}
 
 div.top_subject{
     margin-bottom: 2em;
     padding: 1em;
-    background-color: #259ce0;
+    background-color: #1ECFFF;
     opacity: .8;
     color: #fff;
     border-radius: 0;
 }
 
+
+div.top_subject div.center {
+  display: flex;
+  justify-content: center;
+}
+
+
+div.top_subject p.post-title {
+    font-family: 'Shrikhand', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    margin-top: 0px;
+    z-index: 9;
+    padding: 40px 0px 0;
+    width: auto;
+    display: block;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #1b5fff;
+    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #57bffa
+}
 
 div.top_subject p.padding-right{
     padding-right: 15%;
@@ -33,9 +63,6 @@ div.top_subject p {
     font-weight: 200;
 }
 
-div.top_subject p.subject1 {
-    font-size: 3em;
-}
 
 div.top_subject p.subject2 {
     font-size: .75em;
@@ -67,27 +94,54 @@ div.post-content div.wrap-left{
     margin-left : 20px;
 }
 
-div.col-md-12 {
-    width:100%;
-    float:left;
+
+div.bottom {
+    margin-top:20px;
+    min-height: 200px;
 }
 
-
-div.col-md-6 {
-    width:50%;
-    float:left;
+div.bottom div.left {
+    padding-right:10px;
 }
 
-div.footer {
-
-}
-
-
-
-div.footer p.category-title{
+p.bottom-title{
     font-weight: 700;
     color: #000;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 16px;
+    border-bottom: 2px solid #1ECFFF;
+    width: 70%;
 }
+
+
+li p.same-line {
+    display: inline
+}
+
+
+ul.post-list span.title {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div#related_posts{
+    width:70%;
+}
+
+
+div#related_posts li {
+    background-color: #e2fefb;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ul.post-list span.title-right {
+    float: right;
+}
+
+ul.post-list strong {
+    font-weight: 700;
+}
+

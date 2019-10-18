@@ -5,14 +5,29 @@
 {% load staticfiles %}
 {%  block extrastyle %}
     <link href="/static/css/post/detail.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
     <link href="/static/css/myblog/category.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
-<div class="gnb text-right"></div>
+<div class="gnb text-right">
+    <a href="{% url 'main' %}">Home</a> >> <a href="{% url 'category:index' post.category_id %}">{{ post.category }}</a>
+</div>
 <div class="top_subject">
-    <p class="subject1 text-center">{{ post.title }}</p>
+    <input type="hidden" name="post_pk" id="post_pk" value="{{ post.pk }}"/>
+    <p class="subject1 text-center post-title">{{ post.title }}</p>
+    {% if post.get_tag %}
+        <div class="center">
+        <ul class="center tag-list">
+            {% for tag in post.get_tag %}
+                    <li>{{ tag }}</li>
+                {% endfor %}
+        </ul>
+        </div>
+    {% endif %}
     <p class="subject2 text-right padding-right">ins : {{ post.ins_dt }} / upd : {{ post.upd_dt }}</p>
 </div>
 <div class="post-content">
@@ -21,21 +36,23 @@
         {{ post.formatted_markdown|safe }}
     </div>
 
-    <div id="disqus" class=" wrap-left">
+    <div id="disqus" class="wrap-left">
         {% load disqus_tags %}
         {% disqus_show_comments %}
     </div>
 
-    <div class="footer col-md-12">
-        <div class="col-md-6">
-            <h5>dd</h5>
+    <div class="bottom col-md-12">
+        <div class="col-md-8 left">
+            <p class="bottom-title">
+                관련글
+            </p>
+            <div id="related_posts" class="posts"></div>
         </div>
-        <div class="col-md-6">
-            <p class="category-title">
+        <div class="col-md-4 right">
+            <p class="bottom-title">
                 Category
             </p>
-            <div id="category">
-            </div>
+            <div id="category"></div>
 
         </div>
     </div>
@@ -49,4 +66,5 @@
 {% block extrascript %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/js/get_category.js"></script>
+    <script src="/static/js/get_related_posts.js"></script>
 {% endblock %}
