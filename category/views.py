@@ -1,9 +1,14 @@
+import datetime
+
+from django.db.models.functions import ExtractWeek, ExtractDay
 from django.shortcuts import render
 from django.views.generic import ListView
 
 from category.models import Category
 from post.models import Post
 
+
+today = datetime.datetime.now()
 
 def getallcategory(request):
     data = dict()
@@ -18,13 +23,16 @@ def getpostpercategory(request):
 
     for category in categorys :
         data["posts"][category.name] = Post.objects.filter(category = category)
-    return render(request, "myblog/home.html",data)
+    return render(request, "post/categorys.html", data)
 
 
-class GetMulCategoryLV(ListView):
-    template_name = 'myblog/home.html'
-    model = Category
-    queryset = Category.objects.filter()
+def getpostperday(request):
+    data =dict()
+    data['posts'] = dict()
+    days = Post.objects.filter(ins_dt__month=today.month).annotate(day = ExtractDay('ins_dt')).values('day').distinct()
+    for day in days :
+        data['posts'][day['day']] = Post.objects.filter(ins_dt__day=day['day'])
+    return render(request, "post/days.html", data)
 
 
 class CategoryPostLV(ListView):

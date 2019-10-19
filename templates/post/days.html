@@ -1,0 +1,40 @@
+{% extends "myblog/main.html" %}
+
+{% block title %} post/days{% endblock %}
+
+{% load staticfiles %}
+{%  block extrastyle %}
+    <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/myblog/home.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block home %}
+<ul class="home-post-list post-list">
+<br/>
+    {% for day, ps in posts.items %}
+        {% if ps %}
+            <li class="post-category">
+                <p class="post-category"><span> >> </span></p>
+            {% for p in ps %}
+
+                {% if p.get_tag %}
+                        <ul class="tag-list inline">
+                            <h5 class="inline post_title padding-right"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h5>
+                            {% for tag in p.get_tag %}
+                                <li class="inline">{{ tag }}</li>
+                            {% endfor %}
+                            <h5 class="inline post_date">{{ p.ins_dt }}</h5>
+                        </ul>
+                    {% else %}
+                        <h5 class="inline post_title"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h5>
+                    {% endif %}
+                <br/>
+            {% endfor %}
+            <br/>
+        {% endif %}
+        </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

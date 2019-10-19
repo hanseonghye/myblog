@@ -1,4 +1,3 @@
-from django.core.checks import Tags
 from django.views.generic import DetailView, ListView
 from post.models import Post
 
@@ -18,6 +17,7 @@ class RelatedPostLV(ListView):
         tags = self.request.GET.getlist('tags[]')
         now_pk = self.request.GET['now_post']
         return Post.objects.filter(tags__name__in=tags).exclude(pk=now_pk)
+
 
 
 class TagLV(ListView):

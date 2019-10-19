@@ -18,9 +18,23 @@
             </div>
 
 
-            <div class="user2">
-                hans12312@naver.com
-            </div>
+            <ul class="profile">
+                <li>
+                    <i class="fa fa-map-marker"></i>
+                    Seoul
+                </li>
+                <li>
+                    <i class="fa fa-envelope-o">
+                    </i>
+                    hans12312@naver.com
+                </li>
+                <li>
+                    <i class="fa fa-github"></i>
+                    <a href="https://github.com/hanseonghye">
+                    github.com/hanseonghye</a>
+                </li>
+            </ul>
+
             <div id="category">
             </div>
         </div>
@@ -30,15 +44,15 @@
                 <nav>
                     <ul>
                         <li><a href="#"></a></li>
-                        <li class="selected"><a href="{% url 'main' %}">Home</a></li>
-                        <li><a href="{% url 'category:index' 0 %}">Post</a></li>
+                        <li class="selected"><a href="#">Home</a></li>
+                        <li><a href="{% url 'category:percategory' %}">Post</a></li>
                         <li><a href="{% url 'post:tags' %}">Tag</a></li>
                         <li> <a href="#"></a></li>
                     </ul>
                 </nav>
             </div>
 
-            <hr class="black_hr" style="width:80%;"/>
+            <hr class="white_hr" style="width:80%;"/>
             <div class="posts" style="margin-top: 60px;">
                 {% block home %}{% endblock %}
                 {% block post-list %}{% endblock %}
