@@ -3,8 +3,12 @@
 {% block title %} post/list {% endblock %}
 
 {% block post-list %}
+<br/>
 <ul class="post-list">
     {% for post in posts %}
+        <div class="outer width_50p">
+        <div class="center">
+        <div class="inner">
         <li class="post">
             <h2 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h2>
             {% if post.get_tag %}
@@ -19,6 +23,9 @@
                 <p>{{ post.ins_dt }}</p>
             </div>
         </li>
+        </div>
+        </div>
+        </div>
     {% endfor %}
 </ul>
 {% endblock %}

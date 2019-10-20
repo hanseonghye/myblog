@@ -1,5 +1,6 @@
 .content-1 {
-    max-width: 1012px;
+    width:90%;
+    min-width: 1012px;
     margin: auto;
 }
 
@@ -9,6 +10,7 @@ div.user1-title {
     font-size: 26px;
     line-height: 30px;
     font-weight: 600;
+    font-family: "Noto Sans KR"p;
 }
 
 div.user1-name {
@@ -38,6 +40,11 @@ ul.profile{
 }
 
 
+div.profile {
+    width:90%;
+    padding: 10%;
+}
+
 .content-1 hr {
     width: 160px;
     float: left;
@@ -51,11 +58,26 @@ div.posts ul.post-list {
     padding: 0;
 }
 
+div.outer {
+    border-bottom: 2px solid #FBA6B2;
+    border-right:2px solid #FBA6B2;
+    margin-bottom: 15px;
+}
+
+div.center {
+    border: 3px solid #fff;
+}
+
+div.inner {
+    border-bottom: 2px solid #1ecfff;
+}
 
 div.posts ul.post-list li.post {
-    width:50%;
-    padding: 24px 0;
-    border-bottom: 1px solid #FFEDA5;
+    padding: 2px 15px;
+}
+
+div.posts ul.post-list li.post:hover {
+    background: #d1e4e1;
 }
 
 
@@ -68,7 +90,7 @@ div.posts ul.post-list li.post h2 {
 div.posts ul.post-list li.post p {
     font-size: 14px;
     color: #586069;
-    margin: 6px 0 8px 0;
+    margin: 6px 0 0 0;
 }
 
 
@@ -150,11 +172,6 @@ article.post-content {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 16px;
 }
-
-
-/*div#disqus {*/
-/*    margin-top: 50px;*/
-/*}*/
 
 
 ul.post-list-home p.post-category {

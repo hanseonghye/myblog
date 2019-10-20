@@ -1,11 +1,14 @@
 from django.views.generic import DetailView, ListView
+from hitcount.views import HitCountDetailView
+
 from post.models import Post
 
 
-class PostDV(DetailView):
+class PostDV(HitCountDetailView):
     model = Post
     template_name = 'post/detail.html'
     lookup_field = 'pk'
+    count_hit = True
 
 
 class RelatedPostLV(ListView):

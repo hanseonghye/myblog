@@ -1,17 +1,5 @@
-{% extends "myblog/main.html" %}
+{% if posts %}
 
-{% block title %} post/categorys{% endblock %}
-
-{% load staticfiles %}
-{%  block extrastyle %}
-    <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
-    <link href="/static/css/myblog/home.css" rel="stylesheet" type="text/css">
-{% endblock %}
-
-
-{% block home %}
-<ul class="home-post-list post-list">
-<br/>
     {% for category, ps in posts.items %}
         {% if ps %}
             <li class="post-category">
@@ -28,6 +16,9 @@
                         </ul>
                     {% else %}
                         <h5 class="inline post_title"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h5>
+                        <ul class="tag-list inline">
+                            <h5 style="margin-left:80px;" class="inline post_date">{{ p.ins_dt }}</h5>
+                        </ul>
                     {% endif %}
                 <br/>
             {% endfor %}
@@ -36,5 +27,4 @@
         </li>
 
     {% endfor %}
-</ul>
-{% endblock %}
+{% endif %}

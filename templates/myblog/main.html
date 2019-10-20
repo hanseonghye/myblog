@@ -11,32 +11,38 @@
 {% block content %}
     <div class="content-1" style="margin-top:50px;">
         <div class="col-md-3" style="margin-top: 100px;">
-            <div class="user1">
-                <div class="user1-title">개발 도장깨기</div>
-                <div class="user1-name"> </div>
-                <div class="user1-desc">⚒️ !! 뿌수자 개발 !! ⚒️</div>
+            <div class="outer" style="margin-right:10%; background: #F1F8FF;">
+            <div class="center">
+            <div class="inner">
+            <div class="profile">
+                <div class="user1">
+                    <div class="user1-title">개발 도장깨기</div>
+                    <div class="user1-name"> </div>
+                    <div class="user1-desc">⚒️ !! 뿌수자 개발 !! ⚒️</div>
+                </div>
+
+
+                <ul class="profile">
+                    <li>
+                        <i class="fa fa-map-marker"></i>
+                        Seoul
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o">
+                        </i>
+                        hans12312@naver.com
+                    </li>
+                    <li>
+                        <i class="fa fa-github"></i>
+                        <a href="https://github.com/hanseonghye">
+                        github.com/hanseonghye</a>
+                    </li>
+                </ul>
+
+                <div id="category">
+                </div>
             </div>
-
-
-            <ul class="profile">
-                <li>
-                    <i class="fa fa-map-marker"></i>
-                    Seoul
-                </li>
-                <li>
-                    <i class="fa fa-envelope-o">
-                    </i>
-                    hans12312@naver.com
-                </li>
-                <li>
-                    <i class="fa fa-github"></i>
-                    <a href="https://github.com/hanseonghye">
-                    github.com/hanseonghye</a>
-                </li>
-            </ul>
-
-            <div id="category">
-            </div>
+            </div></div></div>
         </div>
 
         <div class="col-md-9">
@@ -44,8 +50,8 @@
                 <nav>
                     <ul>
                         <li><a href="#"></a></li>
-                        <li class="selected"><a href="#">Home</a></li>
-                        <li><a href="{% url 'category:percategory' %}">Post</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'category:per' %}">Post</a></li>
                         <li><a href="{% url 'post:tags' %}">Tag</a></li>
                         <li> <a href="#"></a></li>
                     </ul>
@@ -61,6 +67,10 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block footer %}
+    <footer id="footer" class="pink"></footer>
 {% endblock %}
 
 {% block extrascript %}

@@ -13,8 +13,13 @@ today = datetime.datetime.now()
 def getallcategory(request):
     data = dict()
     data['categorys'] =Category.objects.filter(use_tf=True)
+    data['all_count'] = Post.objects.filter(use_tf = True).count
     return render(request, "myblog/set_category.html", data)
 
+
+
+def getpostper(request):
+    return render(request,"post/posts_per.html")
 
 def getpostpercategory(request):
     data = dict()
@@ -23,7 +28,7 @@ def getpostpercategory(request):
 
     for category in categorys :
         data["posts"][category.name] = Post.objects.filter(category = category)
-    return render(request, "post/categorys.html", data)
+    return render(request, "post/per_category.html", data)
 
 
 def getpostperday(request):
@@ -32,7 +37,7 @@ def getpostperday(request):
     days = Post.objects.filter(ins_dt__month=today.month).annotate(day = ExtractDay('ins_dt')).values('day').distinct()
     for day in days :
         data['posts'][day['day']] = Post.objects.filter(ins_dt__day=day['day'])
-    return render(request, "post/days.html", data)
+    return render(request, "post/per_day.html", data)
 
 
 class CategoryPostLV(ListView):

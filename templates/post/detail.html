@@ -20,7 +20,7 @@
     <input type="hidden" name="post_pk" id="post_pk" value="{{ post.pk }}"/>
     <p class="subject1 text-center post-title">{{ post.title }}</p>
     {% if post.get_tag %}
-        <div class="center">
+        <div class="center2">
         <ul class="center tag-list">
             {% for tag in post.get_tag %}
                     <li>{{ tag }}</li>
@@ -28,7 +28,7 @@
         </ul>
         </div>
     {% endif %}
-    <p class="subject2 text-right padding-right">ins : {{ post.ins_dt }} / upd : {{ post.upd_dt }}</p>
+    <p class="subject2 text-right padding-right">등록 : {{ post.ins_dt }} / 수정 : {{ post.upd_dt }}</p>
 </div>
 <div class="post-content">
     <div class="content wrap-left">

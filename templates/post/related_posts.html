@@ -1,10 +1,9 @@
 {% if posts %}
     <ul class="post-list">
     {% for post in posts %}
-        <li>
-            <strong>
+        <li style="margin-bottom: 3px;">
                 <span class="title">
-                    <a href="{% url 'post:index' post.pk %}">{{ post.title }}</a>
+                    <strong><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></strong>
                     <span class="title-right">
                         {{ post.category }} /
 
@@ -15,7 +14,6 @@
                     {% endif %}
                     </span>
                 </span>
-            </strong>
 
         </li>
     {% endfor %}

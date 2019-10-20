@@ -1,0 +1,29 @@
+{% extends "myblog/main.html" %}
+
+{% block title %} post/days{% endblock %}
+
+{% load staticfiles %}
+{%  block extrastyle %}
+    <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/myblog/show_post.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block home %}
+<ul class="home-post-list post-list width_80p">
+    <br/>
+    <select id='post_per' style="float:right">
+        <option value="category">카테고리 별</option>
+        <option value="day">날짜 별</option>
+    </select>
+    <br/>
+    <div id="posts"></div>
+</ul>
+{% endblock %}
+
+
+
+{% block extrascript %}
+    <script src="/static/js/get_category.js"></script>
+    <script src="/static/js/get_post_per.js"></script>
+{% endblock %}

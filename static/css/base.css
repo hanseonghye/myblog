@@ -12,11 +12,9 @@ body {
     min-width: 1020px;
     display: block;
     background: #FFDBE5;
+    height:100%;
 }
 
-
-div#content {
-}
 
 
 nav {
@@ -30,8 +28,7 @@ nav ul {
     margin: 0;
 }
 
-nav ul li.selected {
-    border-bottom: 5px solid #FFEDA5;
+nav ul li:hover{
 }
 
 nav ul li {
@@ -41,6 +38,7 @@ nav ul li {
     height: 50px;
     color: #ffffff;
     background-color: #1ecfff;
+    border-bottom: 5px solid #FFEDA5;
 }
 
 nav ul li:first-child{
@@ -59,21 +57,36 @@ nav ul li a {
 }
 
 
+nav ul li a:hover {
+    font-weight: bold;
+    color : #FFEDA5;
+}
+
 div.col-md-12 {
     width:100%;
     float:left;
 }
 
-
-div.col-md-6 {
-    width:50%;
+div.col-md-10 {
+    width:83%;
     float:left;
+}
+
+div.col-md-9 {
+    width:75%;
+    float: left;
 }
 
 div.col-md-8 {
     width:66%;
     float:left;
 }
+
+div.col-md-6 {
+    width:50%;
+    float:left;
+}
+
 
 div.col-md-4 {
     width:33%;
@@ -85,10 +98,11 @@ div.col-md-3 {
     float: left;
 }
 
-div.col-md-9 {
-    width:75%;
+div.col-md-2 {
+    width: 16%;
     float: left;
 }
+
 
 div, span, a, p, h3, h4, h5 {
     text-decoration:none;
@@ -110,4 +124,32 @@ hr.white_hr{
 hr.black_hr{
     clear:both;
     border: solid 2px #000000;
+}
+
+select {
+    height: 24px;
+    border: 1px solid #444;
+    font-size: 100%;
+    color: #000;
+    vertical-align: middle;
+    font-family: "Noto Sans KR",Dotum;
+}
+
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+
+.width_50p {
+    width:50%;
+}
+
+
+.width_80p {
+    width:80%;
 }

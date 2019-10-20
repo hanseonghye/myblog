@@ -1,14 +1,15 @@
 from django.urls import path
 
 from category.views import CategoryPostLV, CategoryNamePostLV, getallcategory, getpostpercategory, \
-    getpostperday
+    getpostperday, getpostper
 
 app_name = 'category'
 
 urlpatterns = [
     path('getallcategory', getallcategory, name='getallcategory'),
-    path('getmulcategory', getpostpercategory, name='percategory' ),
-    path('getperday', getpostperday, name='day' ),
+    path('per', getpostper, name='per' ),
+    path('percategory', getpostpercategory, name='percategory' ),
+    path('perday', getpostperday, name='day' ),
     path('<int:pk>', CategoryPostLV.as_view(), name='index'),
     path('<str:name>', CategoryNamePostLV.as_view(), name='index'),
 ]

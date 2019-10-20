@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'taggit',
     'taggit_templatetags2',
+    'hitcount',
 
 ]
 
