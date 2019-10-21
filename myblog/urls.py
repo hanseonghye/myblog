@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+
+from myModule.init import init
 from myblog.views import HomeView
 
 urlpatterns = [
@@ -27,3 +29,6 @@ urlpatterns = [
 
     url(r'^markdownx/', include('markdownx.urls')),
 ]
+
+
+init()

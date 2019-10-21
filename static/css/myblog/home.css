@@ -1,3 +1,21 @@
 div.home {
+    text-align:center;
     min-height: 300px;
+    padding-top: 100px;
+}
+
+
+div.home div.home_center {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+p.title {
+    font-family: 'uljiro';
+    font-weight: lighter;
+}
+
+p.size_20 {
+    font-size: 20pt;
 }

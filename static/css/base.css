@@ -3,7 +3,7 @@
 }
 
 body {
-    padding-top:100px;
+    padding-top: 100px;
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -12,27 +12,26 @@ body {
     min-width: 1020px;
     display: block;
     background: #FFDBE5;
-    height:100%;
+    height: 100%;
 }
-
 
 
 nav {
-    top:0;
+    top: 0;
 }
 
 nav ul {
-    top:0;
+    top: 0;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li:hover{
+nav ul li:hover {
 }
 
 nav ul li {
-    top:0;
+    top: 0;
     float: left;
     padding: 0;
     height: 50px;
@@ -41,10 +40,11 @@ nav ul li {
     border-bottom: 5px solid #FFEDA5;
 }
 
-nav ul li:first-child{
+nav ul li:first-child {
     border-top-left-radius: 5px;
 }
-nav ul li:last-child{
+
+nav ul li:last-child {
     border-top-right-radius: 5px;
 }
 
@@ -59,38 +59,38 @@ nav ul li a {
 
 nav ul li a:hover {
     font-weight: bold;
-    color : #FFEDA5;
+    color: #FFEDA5;
 }
 
 div.col-md-12 {
-    width:100%;
-    float:left;
+    width: 100%;
+    float: left;
 }
 
 div.col-md-10 {
-    width:83%;
-    float:left;
+    width: 83%;
+    float: left;
 }
 
 div.col-md-9 {
-    width:75%;
+    width: 75%;
     float: left;
 }
 
 div.col-md-8 {
-    width:66%;
-    float:left;
+    width: 66%;
+    float: left;
 }
 
 div.col-md-6 {
-    width:50%;
-    float:left;
+    width: 50%;
+    float: left;
 }
 
 
 div.col-md-4 {
-    width:33%;
-    float:left;
+    width: 33%;
+    float: left;
 }
 
 div.col-md-3 {
@@ -105,24 +105,24 @@ div.col-md-2 {
 
 
 div, span, a, p, h3, h4, h5 {
-    text-decoration:none;
-    color:#000;
+    text-decoration: none;
+    color: #000;
     font-family: 'Nanum Gothic Coding', sans-serif;
 }
 
 
-hr.yellow_hr{
-    clear:both;
+hr.yellow_hr {
+    clear: both;
     border: solid 2px #FFEDA5;
 }
 
-hr.white_hr{
-    clear:both;
+hr.white_hr {
+    clear: both;
     border: solid 2px #fff;
 }
 
-hr.black_hr{
-    clear:both;
+hr.black_hr {
+    clear: both;
     border: solid 2px #000000;
 }
 
@@ -132,7 +132,7 @@ select {
     font-size: 100%;
     color: #000;
     vertical-align: middle;
-    font-family: "Noto Sans KR",Dotum;
+    font-family: "Noto Sans KR", Dotum;
 }
 
 
@@ -146,10 +146,21 @@ option {
 
 
 .width_50p {
-    width:50%;
+    width: 50%;
 }
 
 
 .width_80p {
-    width:80%;
+    width: 80%;
+}
+
+::selection {
+    background: #fffc00;
+    color: #000;
+}
+
+
+@font-face {
+    font-family: 'uljiro';
+    src: url('/static/font/BMEULJIROTTF.ttf') format('truetype');
 }

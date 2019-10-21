@@ -3,7 +3,7 @@
 {% block title %} home {% endblock %}
 
 {% load staticfiles %}
-{%  block extrastyle %}
+{% block extrastyle %}
     <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
     <link href="/static/css/myblog/home.css" rel="stylesheet" type="text/css">
 {% endblock %}
@@ -12,9 +12,10 @@
     <br/>
 
     <div class="home width_80p">
-        <p>멋진 개발자가 되기 위한 기록</p>
+        <div class="home_center">
+            <p class="title size_20">멋진 개발자가 되기 위한 기록</p>
+            <p class="title">19.10.15 ~</p>
+        </div>
     </div>
-
-    <hr class="white_hr" style="width:80%;"/>
 
 {% endblock %}

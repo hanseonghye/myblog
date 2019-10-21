@@ -14,7 +14,7 @@
 {% block content %}
 
 <div class="gnb text-right">
-    <a href="{% url 'main' %}">Home</a> >> <a href="{% url 'category:index' post.category_id %}">{{ post.category }}</a>
+    <a href="{% url 'home' %}">Home</a> >> <a href="{% url 'category:index' post.category_id %}">{{ post.category }}</a>
 </div>
 <div class="top_subject">
     <input type="hidden" name="post_pk" id="post_pk" value="{{ post.pk }}"/>
