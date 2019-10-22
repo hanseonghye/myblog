@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'temp.apps.TempConfig',
 
     'markdownx',
+    'ckeditor',
+    'ckeditor_uploader',
     'rest_framework',
     'disqus',
     'django.contrib.sites',
@@ -126,9 +128,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static2')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 SITE_ID = 1
 DISQUS_WEBSITE_SHORTNAME = 'pythonweb-4'
+
+CKEDITOR_BASEPATH = f'{STATIC_URL}/ckeditor/ckeditor/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
