@@ -136,5 +136,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 SITE_ID = 1
 DISQUS_WEBSITE_SHORTNAME = 'pythonweb-4'
 
-CKEDITOR_BASEPATH = f'{STATIC_URL}/ckeditor/ckeditor/'
+CKEDITOR_BASEPATH = f'{STATIC_ROOT}/ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
