@@ -3,7 +3,7 @@
 {% block title %} main {% endblock %}
 
 {% load staticfiles %}
-{%  block extrastyle %}
+{% block extrastyle %}
     <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
@@ -12,37 +12,43 @@
     <div class="content-1" style="margin-top:50px;">
         <div class="col-md-3" style="margin-top: 100px;">
             <div class="outer" style="margin-right:10%; background: #F1F8FF;">
-            <div class="center">
-            <div class="inner">
-            <div class="profile">
-                <div class="user1">
-                    <div class="user1-title">개발 도장깨기</div>
-                    <div class="user1-name"> </div>
-                    <div class="user1-desc">⚒️ !! 뿌수자 개발 !! ⚒️</div>
-                </div>
+                <div class="center">
+                    <div class="inner">
+                        <div class="profile">
+                            <div class="user1">
+                                <div class="user1-title">개발 도장깨기</div>
+                                <div class="user1-name "></div>
+                                <div class="user1-desc">⚒️ !! 뿌수자 개발 !! ⚒️</div>
+                            </div>
 
 
-                <ul class="profile">
-                    <li>
-                        <i class="fa fa-map-marker"></i>
-                        Seoul
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope-o">
-                        </i>
-                        hans12312@naver.com
-                    </li>
-                    <li>
-                        <i class="fa fa-github"></i>
-                        <a href="https://github.com/hanseonghye">
-                        github.com/hanseonghye</a>
-                    </li>
-                </ul>
+                            <ul class="profile">
+                                <li>
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                    한성혜
+                                </li>
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    &nbsp;Seoul
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o">
+                                    </i>
+                                    hans12312@naver.com
+                                </li>
+                                <li>
+                                    <i class="fa fa-github"></i>
+                                    <a href="https://github.com/hanseonghye">
+                                        github.com/hanseonghye</a>
+                                </li>
+                            </ul>
 
-                <div id="category">
+                            <div id="category">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div></div></div>
         </div>
 
         <div class="col-md-9">
@@ -53,7 +59,7 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'category:per' %}">Post</a></li>
                         <li><a href="{% url 'post:tags' %}">Tag</a></li>
-                        <li> <a href="#"></a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </nav>
             </div>

@@ -3,7 +3,7 @@
 {% block title %} post/detail {% endblock %}
 
 {% load staticfiles %}
-{%  block extrastyle %}
+{% block extrastyle %}
     <link href="/static/css/post/detail.css" rel="stylesheet" type="text/css">
     <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
     <link href="/static/css/myblog/category.css" rel="stylesheet" type="text/css">
@@ -13,51 +13,52 @@
 
 {% block content %}
 
-<div class="gnb text-right">
-    <a href="{% url 'home' %}">Home</a> >> <a href="{% url 'category:index' post.category_id %}">{{ post.category }}</a>
-</div>
-<div class="top_subject">
-    <input type="hidden" name="post_pk" id="post_pk" value="{{ post.pk }}"/>
-    <p class="subject1 text-center post-title">{{ post.title }}</p>
-    {% if post.get_tag %}
-        <div class="center2">
-        <ul class="center tag-list">
-            {% for tag in post.get_tag %}
-                    <li>{{ tag }}</li>
-                {% endfor %}
-        </ul>
-        </div>
-    {% endif %}
-    <p class="subject2 text-right padding-right">등록 : {{ post.ins_dt }} / 수정 : {{ post.upd_dt }}</p>
-</div>
-<div class="post-content">
-    <div class="content wrap-left">
-
-        {{ post.formatted_markdown|safe }}
+    <div class="gnb text-right">
+        <a href="{% url 'home' %}">Home</a> >> <a
+            href="{% url 'category:index' post.category_id %}">{{ post.category }}</a>
     </div>
-
-    <div id="disqus" class="wrap-left">
-        {% load disqus_tags %}
-        {% disqus_show_comments %}
+    <div class="top_subject">
+        <input type="hidden" name="post_pk" id="post_pk" value="{{ post.pk }}"/>
+        <p class="subject1 text-center post-title">{{ post.title }}</p>
+        {% if post.get_tag %}
+            <div class="center2">
+                <ul class="center tag-list">
+                    {% for tag in post.get_tag %}
+                        <li>{{ tag }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <p class="subject2 text-right padding-right">등록 : {{ post.ins_dt }} / 수정 : {{ post.upd_dt }}</p>
     </div>
+    <div class="post-content">
+        <div class="content wrap-left">
 
-    <div class="bottom col-md-12">
-        <div class="col-md-8 left">
-            <p class="bottom-title">
-                관련글
-            </p>
-            <div id="related_posts" class="posts"></div>
+            {{ post.formatted_markdown|safe }}
         </div>
-        <div class="col-md-4 right">
-            <p class="bottom-title">
-                Category
-            </p>
-            <div id="category"></div>
 
+        <div id="disqus" class="wrap-left">
+            {% load disqus_tags %}
+            {% disqus_show_comments %}
         </div>
+
+        <div class="bottom col-md-12">
+            <div class="col-md-8 left">
+                <p class="bottom-title">
+                    관련글
+                </p>
+                <div id="related_posts" class="posts"></div>
+            </div>
+            <div class="col-md-4 right">
+                <p class="bottom-title">
+                    Category
+                </p>
+                <div id="category"></div>
+
+            </div>
+        </div>
+
     </div>
-
-</div>
 
 
 
