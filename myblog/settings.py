@@ -43,10 +43,8 @@ INSTALLED_APPS = [
     'post.apps.PostConfig',
     'temp.apps.TempConfig',
 
-    'markdownx',
     'ckeditor',
     'ckeditor_uploader',
-    'rest_framework',
     'disqus',
     'django.contrib.sites',
     'taggit',
