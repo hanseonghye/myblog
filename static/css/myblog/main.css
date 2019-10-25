@@ -74,7 +74,7 @@ div.inner {
 }
 
 div.posts ul.post-list li.post {
-    padding: 2px 15px;
+    padding: 5px 15px;
 }
 
 div.posts ul.post-list li.post:hover {
@@ -82,9 +82,8 @@ div.posts ul.post-list li.post:hover {
 }
 
 
-div.posts ul.post-list li.post h2 {
+div.posts ul.post-list li.post .post_title {
     margin: 0;
-    font-size: 20px;
     font-weight: 600;
 }
 

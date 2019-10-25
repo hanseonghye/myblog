@@ -4,10 +4,10 @@ $(document).ready(function() {
 
         var url = ''
         if (val == 'day') {
-            url = '/category/perday'
+            url = '/post/perday'
         }
         else if (val == 'category') {
-            url = '/category/percategory'
+            url = '/post/percategory'
         }
 
         $.get(url, function (data) {

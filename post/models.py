@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.db.models import F
@@ -12,8 +13,7 @@ from category.models import Category
 class Post(models.Model, HitCountMixin):
     title = models.CharField(max_length=50)
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
-    # content = MarkdownxField()
-    content = RichTextField()
+    content = RichTextUploadingField()
     ins_dt = models.DateTimeField(auto_now_add=True)
     upd_dt = models.DateTimeField(auto_now=True)
     use_tf = models.BooleanField(default=True)

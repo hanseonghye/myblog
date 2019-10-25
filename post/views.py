@@ -1,8 +1,14 @@
+import datetime
+from django.db.models.functions import ExtractDay
+from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from hitcount.views import HitCountDetailView
 
+from category.models import Category
 from post.models import Post
 
+
+today = datetime.datetime.now()
 
 class PostDV(HitCountDetailView):
     model = Post
@@ -39,3 +45,27 @@ class TagPostLV(ListView):
 
     def get_queryset(self):
         return Post.objects.filter(tags__id=self.request.GET['tag_id'])
+
+
+
+def getpostper(request):
+    return render(request,"post/posts_per.html")
+
+
+def getpostpercategory(request):
+    data = dict()
+    data['posts'] = dict()
+    categorys = Category.objects.filter(use_tf = True)
+
+    for category in categorys :
+        data["posts"][category.name] = Post.objects.filter(category = category)
+    return render(request, "post/per_category.html", data)
+
+
+def getpostperday(request):
+    data =dict()
+    data['posts'] = dict()
+    days = Post.objects.filter(ins_dt__month=today.month).annotate(day = ExtractDay('ins_dt')).values('day').distinct()
+    for day in days :
+        data['posts'][day['day']] = Post.objects.filter(ins_dt__day=day['day'])
+    return render(request, "post/per_day.html", data)

@@ -1,5 +1,6 @@
 venv/*
 static2/*
+media/*
 */__pycache__/*
 */migrations/*
 .idea/*

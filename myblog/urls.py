@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 from myModule.init import init
+from django.conf import settings
 from myblog.views import HomeView
 
 urlpatterns = [
@@ -26,9 +27,8 @@ urlpatterns = [
     path('category/', include('category.urls'), name='category'),
     path('post/', include('post.urls'), name='post'),
 
-
-    url(r'^markdownx/', include('markdownx.urls')),
-]
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 init()

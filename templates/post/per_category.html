@@ -3,7 +3,7 @@
     {% for category, ps in posts.items %}
         {% if ps %}
             <li class="post-category">
-            <p class="post-category"><span> >> {{ category }}</span></p>
+            <p class="post-category"><span style=" font-family: 'Noto Sans KR';"> >> {{ category }}</span></p>
 
             {% for p in ps %}
                     {% if p.get_tag %}

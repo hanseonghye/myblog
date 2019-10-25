@@ -10,7 +10,7 @@
         <div class="center">
         <div class="inner">
         <li class="post">
-            <h2 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h2>
+            <h3 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h3>
             {% if post.get_tag %}
                 <ul class="tag-list">
                 {% for tag in post.get_tag %}

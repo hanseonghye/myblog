@@ -2,8 +2,8 @@
     {% for day, ps in posts.items %}
         {% if ps %}
             <li class="post-category">
-                <p class="post-category"><span> >> </span></p>
             {% for p in ps %}
+                <p class="post-category"><span style="font-family: 'Noto Sans KR';"> >> {{ p.ins_dt | date:'Y-m-d' }}</span></p>
 
                 {% if p.get_tag %}
                     <ul class="tag-list inline">
@@ -11,11 +11,9 @@
                         {% for tag in p.get_tag %}
                             <li class="inline">{{ tag }}</li>
                         {% endfor %}
-                        <h5 class="inline post_date">{{ p.ins_dt }}</h5>
                     </ul>
                 {% else %}
                     <h5 class="inline post_title"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h5>
-                    <h5 style="margin-left:80px;" class="inline post_date">{{ p.ins_dt }}</h5>
                 {% endif %}
                 <br/>
             {% endfor %}

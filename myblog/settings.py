@@ -138,3 +138,6 @@ DISQUS_WEBSITE_SHORTNAME = 'pythonweb-4'
 
 CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
