@@ -2,7 +2,8 @@ venv/*
 static2/*
 media/*
 */__pycache__/*
+__pycache__/
 */migrations/*
 .idea/*
 key.json
-temp/*
+settings.py

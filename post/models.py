@@ -4,8 +4,6 @@ from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.db.models import F
 from hitcount.models import HitCountMixin, HitCount
-from markdownx.models import MarkdownxField
-from markdownx.utils import markdownify
 from taggit.managers import TaggableManager
 from category.models import Category
 
@@ -33,11 +31,6 @@ class Post(models.Model, HitCountMixin):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         Category.objects.filter(id=self.category_id).update(post_num=F('post_num') + 1)
-
-
-    @property
-    def formatted_markdown(self):
-        return markdownify(self.content)
 
 
     @property

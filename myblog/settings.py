@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'icv7k*==!$-9vkoors@efa%v)v0yw$451*xsf_n0(syv70=h_5'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'icv7k*==!$-9vkoors@efa%v)v0yw$451*xsf_n0(syv70=h_5')
+
 
 KEY_PATH = os.path.join(BASE_DIR + '/key.json')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
 
     'category.apps.CategoryConfig',
     'post.apps.PostConfig',
-    'temp.apps.TempConfig',
 
     'ckeditor',
     'ckeditor_uploader',
