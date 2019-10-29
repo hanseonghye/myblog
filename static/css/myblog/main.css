@@ -10,7 +10,7 @@ div.user1-title {
     font-size: 26px;
     line-height: 30px;
     font-weight: 600;
-    font-family: "uljiro";
+    font-family: "uljiro", 'Nanum Gothic Coding', sans-serif;
     font-weight: lighter;
 }
 
@@ -200,3 +200,17 @@ p.post-title {
     text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #57bffa
 }
 
+
+p.purple_border {
+    font-size: 12pt;
+    color:#fff;
+}
+
+p.purple_border span {
+    font-size: 12pt;
+    color:#fff;
+    font-weight: bold;
+    background-color:#A78EB8;
+    padding:3px 10px;
+    border-radius: 5px;
+}

@@ -1,9 +1,14 @@
 {% extends "myblog/main.html" %}
 
-{% block title %} post/list {% endblock %}
+{% block title %} {% endblock %}
 
 {% block post-list %}
 <br/>
+    {% if category %}
+        <p class="purple_border"><span style="font-size: 12pt; font-family: 'Noto Sans KR';">{{ category.name }}</span></p>
+    {% else %}
+        <p class="purple_border"><span style="font-size: 12pt; font-family: 'Noto Sans KR';">{{ all_category }}</span></p>
+    {% endif %}
 <ul class="post-list">
     {% for post in posts %}
         <div class="outer width_50p">

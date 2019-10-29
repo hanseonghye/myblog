@@ -2,9 +2,9 @@
     {% for day, ps in posts.items %}
         {% if ps %}
             <li class="post-category">
-            {% for p in ps %}
-                <p class="post-category"><span style="font-family: 'Noto Sans KR';"> >> {{ p.ins_dt | date:'Y-m-d' }}</span></p>
+            <p class="purple_border"><span style="font-family: 'Noto Sans KR';">{{ ps.0.ins_dt | date:'Y-m-d' }}</span></p>
 
+            {% for p in ps %}
                 {% if p.get_tag %}
                     <ul class="tag-list inline">
                         <h4 class="inline post_title padding-right"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h4>
@@ -18,8 +18,8 @@
                 <br/>
             {% endfor %}
             <br/>
+            </li>
         {% endif %}
-        </li>
 
     {% endfor %}
 {% endif %}

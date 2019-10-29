@@ -25,6 +25,14 @@ class CategoryPostLV(ListView):
         else :
             return Post.objects.filter(category = self.kwargs['pk'], use_tf=True)
 
+    def get_context_data(self, *args, **kwargs):
+        data = super(CategoryPostLV, self).get_context_data(*args, **kwargs)
+
+        if self.kwargs['pk'] == 0 :
+            data['all_category'] = '전체 게시글'
+        else :
+            data['category'] = Category.objects.get(id = self.kwargs['pk'])
+        return data
 
 class CategoryNamePostLV(ListView):
     template_name = 'post/list.html'
@@ -35,3 +43,8 @@ class CategoryNamePostLV(ListView):
     def get_queryset(self):
         return Post.objects.filter(category__name=self.kwargs['name'],use_tf=True);
 
+
+    def get_context_data(self, *args, **kwargs):
+        data = super(CategoryNamePostLV, self).get_context_data(*args, **kwargs)
+        data['category'] = Category.objects.get(name = self.kwargs['name'])
+        return data
