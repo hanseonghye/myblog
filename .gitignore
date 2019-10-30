@@ -6,4 +6,3 @@ __pycache__/
 */migrations/*
 .idea/*
 key.json
-myblog/settings.py
