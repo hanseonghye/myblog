@@ -4,4 +4,3 @@ media/*
 __pycache__/
 */migrations/*
 .idea/*
-key.json
