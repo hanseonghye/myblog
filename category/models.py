@@ -8,6 +8,7 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['orderlv']
+        db_table = "category_category"
 
     def __str__(self):
         return self.name

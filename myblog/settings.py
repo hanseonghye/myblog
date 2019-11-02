@@ -93,17 +93,10 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 #     'default': json.loads(open(KEY_PATH).read())
 # }
 DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "myblog",
-        "USER": "",
-        "PASSWORD": "",
-        "HOST": "",
-        "PORT": ""
-    }
+
 }
 
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
+DATABASES['default'] =  dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

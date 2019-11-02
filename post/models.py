@@ -23,6 +23,7 @@ class Post(models.Model, HitCountMixin):
 
     class Meta:
         ordering = ['-ins_dt']
+        db_table = "post_post"
 
     def __str__(self):
         return f'Post {self.pk}/{self.title}'
