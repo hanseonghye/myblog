@@ -4,6 +4,7 @@ __pycache__/*
 */__pycache__/*
 */*/__pycache__/*
 __pycache__/*
-*/migrations/*
+*/migrations/0*.py
+*/migrations/*.pyc
 .idea/*
 key.json
