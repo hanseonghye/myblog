@@ -100,7 +100,7 @@ if os.path.isfile(dotenv_file):
 
 DATABASES = {
 }
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # del DATABASES['default']['OPTIONS']['sslmode']
 
