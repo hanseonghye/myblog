@@ -8,3 +8,4 @@ __pycache__/*
 */migrations/*.pyc
 .idea/*
 key.json
+local_settings.py
