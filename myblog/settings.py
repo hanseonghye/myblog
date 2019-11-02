@@ -14,6 +14,8 @@ import os
 import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -91,6 +93,8 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 DATABASES = {
     'default': json.loads(open(KEY_PATH).read())
 }
+
+DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

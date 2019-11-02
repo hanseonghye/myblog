@@ -1,5 +1,4 @@
 venv/*
-static2/*
 media/*
 */__pycache__/*
 __pycache__/

@@ -1,0 +1,42 @@
+ul.home-post-list {
+}
+
+ul.home-post-list ul.tag-list li  {
+    float: none;
+}
+
+div.posts ul.home-post-list li.post {
+    padding : 0;
+    padding-left: 50px;
+    border-bottom: 0;
+}
+
+
+p.post-category {
+    font-size: 16px;
+    color:#fff;
+}
+
+p.post-category span {
+    font-size: 16px;
+    color:#fff;
+    font-weight: bold;
+    background-color:#A78EB8;
+    padding:3px 10px;
+    border-radius: 5px;
+}
+
+
+h4.post_title {
+    padding-left : 50px;
+}
+
+.padding-right{
+    padding-right:20px;
+}
+
+
+
+.inline {
+    display: inline;
+}
