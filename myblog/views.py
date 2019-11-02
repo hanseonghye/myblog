@@ -18,8 +18,8 @@ class HomeView(TemplateView):
     template_name = 'myblog/home.html'
 
     def get_context_data(self, **kwargs):
-        init()
         data = dict();
         data['posts'] = Post.objects.filter(use_tf = True)
         return data
 
+init()
