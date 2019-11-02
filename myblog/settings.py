@@ -15,6 +15,8 @@ import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import dj_database_url
+import django_heroku
+import dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -92,18 +94,15 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # DATABASES = {
 #     'default': json.loads(open(KEY_PATH).read())
 # }
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
 DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d3evoq0qfu0odn",
-        "HOST": "ec2-174-129-253-104.compute-1.amazonaws.com",
-        "PORT": "5432"
-    }
-
 }
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+django_heroku.settings(locals())
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# del DATABASES['default']['OPTIONS']['sslmode']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
