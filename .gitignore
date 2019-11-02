@@ -1,6 +1,7 @@
 venv/*
+static2/*
 */__pycache__/*
-__pycache__/
-*/migrations/*
+__pycache__/*
+*/migrations/0*.py
 .idea/*
 key.json
