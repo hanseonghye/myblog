@@ -6,7 +6,7 @@
 {% for category in categorys %}
     <p class="cate category">
         <a href="{% url 'category:index' category.pk %}">
-            {{ category.name }} ({{ category.post_num }})
+            {{ category.name }} ({{ category.posts_count }})
         </a>
     </p>
 

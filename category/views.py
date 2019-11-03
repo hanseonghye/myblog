@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import render
 from django.views.generic import ListView
 
@@ -7,7 +8,7 @@ from post.models import Post
 
 def getallcategory(request):
     data = dict()
-    data['categorys'] =Category.objects.filter(use_tf=True)
+    data['categorys'] =Category.objects.filter(use_tf=True).annotate(posts_count=Count('post'))
     data['all_count'] = Post.objects.filter(use_tf = True).count
     return render(request, "myblog/set_category.html", data)
 

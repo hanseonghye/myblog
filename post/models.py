@@ -31,7 +31,6 @@ class Post(models.Model, HitCountMixin):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        Category.objects.filter(id=self.category_id).update(post_num=F('post_num') + 1)
 
 
     @property

@@ -1,8 +1,4 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView
-
-from category.models import Category
-from myModule.init import init
 from post.models import Post
 
 
@@ -21,5 +17,3 @@ class HomeView(TemplateView):
         data = dict();
         data['posts'] = Post.objects.filter(use_tf = True)
         return data
-
-init()
