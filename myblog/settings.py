@@ -14,8 +14,6 @@ import os
 import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import dj_database_url
-import dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'icv7k*==!$-9vkoors@efa%v)v0yw$451*xsf_n0(syv70=h_5')
 
-KEY_PATH = os.path.join(BASE_DIR + '/key.json')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
@@ -52,7 +49,6 @@ INSTALLED_APPS = [
     'taggit',
     'taggit_templatetags2',
     'hitcount',
-
 ]
 
 MIDDLEWARE = [
@@ -88,20 +84,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myblog.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': json.loads(open(KEY_PATH).read())
-# }
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': ''
+    }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-# del DATABASES['default']['OPTIONS']['sslmode']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

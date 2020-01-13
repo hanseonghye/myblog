@@ -15,11 +15,9 @@ guider==3.9.5
 gunicorn==19.9.0
 idna==2.8
 Markdown==3.1.1
-mock==3.0.5
 Pillow==6.2.0
 psycopg2==2.8.3
 psycopg2-binary==2.8.4
-python-dotenv==0.10.3
 pytz==2019.2
 requests==2.22.0
 six==1.12.0
