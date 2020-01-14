@@ -164,3 +164,9 @@ option {
 /*    font-family: 'uljiro';*/
 /*    src: url('/static/font/BMEULJIROTTF.ttf') format('truetype');*/
 /*}*/
+
+
+@font-face {
+    font-family: 'jua';
+    src: url('/static/font/BMJUA_ttf.ttf') format('truetype');
+}
