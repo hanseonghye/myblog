@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'icv7k*==!$-9vkoors@efa%v)v0yw$451*xsf_n0(syv70=h_5')
 
+KEY_PATH = os.path.join(BASE_DIR + '/key.json')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
@@ -39,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'myblog',
+    'myblog.templatetags',
+
     'category.apps.CategoryConfig',
     'post.apps.PostConfig',
 
@@ -49,6 +53,7 @@ INSTALLED_APPS = [
     'taggit',
     'taggit_templatetags2',
     'hitcount',
+    'mptt',
 ]
 
 MIDDLEWARE = [
@@ -84,16 +89,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myblog.wsgi.application'
 
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': ''
-    }
+    'default': json.loads(open(KEY_PATH).read())
 }
 
 # Password validation

@@ -1,7 +1,7 @@
 {% load custom_tags %}
 <p class="cate title">
     <a href="{% url 'category:index' 0 %}">
-    전체보기 ({{ all_count }})
+    _ALL ({{ all_count }})
     </a>
 </p>
 {% for category in categorys %}

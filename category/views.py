@@ -29,7 +29,7 @@ class CategoryPostLV(ListView):
         data = super(CategoryPostLV, self).get_context_data(*args, **kwargs)
 
         if self.kwargs['pk'] == 0:
-            data['all_category'] = '전체 게시글'
+            data['all_category'] = '_ALL'
         else:
             data['category'] = Category.objects.get(id=self.kwargs['pk'])
         return data
