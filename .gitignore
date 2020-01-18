@@ -9,3 +9,4 @@ key.json
 local_settings.py
 .env
 myblog/settings.py
+*/migrations/*

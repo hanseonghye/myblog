@@ -1,13 +1,16 @@
 div.home {
     text-align:center;
     min-height: 300px;
-    padding-top: 100px;
 }
 
 
 div.home div.home_center {
     display: inline-block;
     vertical-align: middle;
+}
+
+div.home div.home_center img {
+    max-width: 60%;
 }
 
 
