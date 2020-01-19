@@ -1,7 +1,10 @@
 from django.contrib import admin
+from mptt.admin import DraggableMPTTAdmin
+
 from category.models import Category
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'orderlv', 'use_tf')
+# class CategoryAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'orderlv', 'use_tf')
 
-admin.site.register(Category, CategoryAdmin)
+
+admin.site.register(Category, DraggableMPTTAdmin)

@@ -7,8 +7,8 @@ from hitcount.views import HitCountDetailView
 from category.models import Category
 from post.models import Post
 
-
 today = datetime.datetime.now()
+
 
 class PostDV(HitCountDetailView):
     model = Post
@@ -28,13 +28,12 @@ class RelatedPostLV(ListView):
         return Post.objects.filter(tags__name__in=tags).exclude(pk=now_pk)
 
 
-
 class TagLV(ListView):
     template_name = "post/all_tags.html"
     context_object_name = 'tags'
 
-
     def get_queryset(self):
+        # post =
         return Post.tags.all().order_by('post__tags__num_times')
 
 
@@ -47,25 +46,24 @@ class TagPostLV(ListView):
         return Post.objects.filter(tags__id=self.request.GET['tag_id'])
 
 
-
 def getpostper(request):
-    return render(request,"post/posts_per.html")
+    return render(request, "post/posts_per.html")
 
 
 def getpostpercategory(request):
     data = dict()
     data['posts'] = dict()
-    categorys = Category.objects.filter(use_tf = True)
+    categorys = Category.objects.filter(use_tf=True)
 
-    for category in categorys :
-        data["posts"][category.name] = Post.objects.filter(category = category)
+    for category in categorys:
+        data["posts"][category.name] = Post.objects.filter(category=category)
     return render(request, "post/per_category.html", data)
 
 
 def getpostperday(request):
-    data =dict()
+    data = dict()
     data['posts'] = dict()
-    days = Post.objects.filter(ins_dt__month=today.month).annotate(day = ExtractDay('ins_dt')).values('day').distinct()
-    for day in days :
+    days = Post.objects.filter(ins_dt__month=today.month).annotate(day=ExtractDay('ins_dt')).values('day').distinct()
+    for day in days:
         data['posts'][day['day']] = Post.objects.filter(ins_dt__day=day['day'])
     return render(request, "post/per_day.html", data)
