@@ -20,6 +20,9 @@
     <div class="top_subject">
         <input type="hidden" name="post_pk" id="post_pk" value="{{ post.pk }}"/>
         <p class="subject1 text-center post-title">{{ post.title }}</p>
+        {% if post.desc %}
+            <p class="text-center">{{ post.desc }}</p>
+        {% endif %}
         {% if post.get_tag %}
             <div class="center2">
                 <ul class="center tag-list">
