@@ -11,6 +11,7 @@ from category.models import Category
 
 class Post(models.Model, HitCountMixin):
     title = models.CharField(max_length=50)
+    desc = models.TextField(default='')
     # category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
     category = TreeForeignKey(Category, null=True, on_delete=models.SET_NULL)
     content = RichTextUploadingField()
