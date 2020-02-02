@@ -14,7 +14,7 @@ body {
 div.gnb {
     font-size: .8rem;
     padding: 1px;
-    background-color: #2286FF;
+    background-color: #43597D;
     color: #ffffff;
     padding-right: 50px;
 }
@@ -28,7 +28,7 @@ div.gnb a {
 div.top_subject{
     margin-bottom: 2em;
     padding: 1em;
-    background-color: #1ECFFF;
+    background-color: #D5F2FF;
     opacity: .8;
     color: #fff;
     border-radius: 0;
@@ -54,8 +54,8 @@ div.top_subject p.post-title {
     line-height: 35px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #1b5fff;
-    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #57bffa
+    color: #143597D;
+    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #30C0FF;
 }
 
 div.top_subject p.padding-right{
@@ -85,7 +85,7 @@ div.post-content {
 
 
 div.post-content div.content {
-    border-bottom: 3px solid #57bffa;
+    border-bottom: 2px solid #000;
     padding: 15px;
     margin-bottom: 50px;
 
@@ -94,8 +94,6 @@ div.post-content div.content {
 
 div.post-content div#disqus {
     width:90%;
-    margin:auto;
-
 }
 
 
@@ -118,7 +116,7 @@ p.bottom-title{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 16px;
-    border-bottom: 2px solid #1ECFFF;
+    border-bottom: 2px solid #000;
     width: 70%;
 }
 

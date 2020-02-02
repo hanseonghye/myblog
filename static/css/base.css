@@ -11,7 +11,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     min-width: 1020px;
     display: block;
-    background: #FFDBE5;
+    background: #E0DDF3;
     height: 100%;
 }
 
@@ -36,7 +36,7 @@ nav ul li {
     padding: 0;
     height: 50px;
     color: #ffffff;
-    background-color: #1ecfff;
+    background-color: #43597D;
     border-bottom: 5px solid #FFEDA5;
 }
 
@@ -155,7 +155,7 @@ option {
 }
 
 ::selection {
-    background: #fffc00;
+    background: #FF4040;
     color: #000;
 }
 

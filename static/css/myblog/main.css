@@ -60,8 +60,8 @@ div.posts ul.post-list {
 }
 
 div.outer {
-    border-bottom: 2px solid #FBA6B2;
-    border-right:2px solid #FBA6B2;
+    border-bottom: 2px solid #A78EB8;
+    border-right:2px solid #A78EB8;
     margin-bottom: 15px;
 }
 
@@ -70,7 +70,7 @@ div.center {
 }
 
 div.inner {
-    border-bottom: 2px solid #1ecfff;
+    border-bottom: 2px solid #ccd9ff;
 }
 
 div.posts ul.post-list li.post {
@@ -104,7 +104,7 @@ ul.tag-list li {
     float: left;
     margin: 0 0.5em 0.5em 0;
     padding: 0.3em 0.9em;
-    background: #f1f8ff;
+    background: #ffffff;
     border-radius: 3px;
     color: #0366d6;
     font-size: 12px;
@@ -197,7 +197,7 @@ p.post-title {
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: #1b5fff;
-    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #57bffa
+    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #ccd9ff
 }
 
 
