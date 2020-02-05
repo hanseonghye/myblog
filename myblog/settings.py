@@ -28,9 +28,10 @@ SECRET_KEY = secrets['secret_key']
 KEY_PATH = os.path.join(BASE_DIR + '/key.json')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['devpunch.xyz']
 
 # Application definition
 
@@ -41,8 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
 
     'myblog',
     'myblog.templatetags',
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'disqus',
+    'django.contrib.sites',
     'taggit',
     'taggit_templatetags2',
     'hitcount',
