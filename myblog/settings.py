@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 
     'myblog',
     'myblog.templatetags',
@@ -51,7 +53,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'disqus',
-    'django.contrib.sites',
     'taggit',
     'taggit_templatetags2',
     'hitcount',

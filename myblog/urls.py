@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf import settings
+
+from myblog.sitemaps import PostSitemap
 from myblog.views import HomeView
 
+
+sitemaps = {
+    'posts':PostSitemap,
+}
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('', HomeView.as_view(), name='home'),
     path('category/', include('category.urls'), name='category'),
     path('post/', include('post.urls'), name='post'),

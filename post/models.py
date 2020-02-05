@@ -3,6 +3,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.db.models import F
+from django.urls import reverse
 from hitcount.models import HitCountMixin, HitCount
 from mptt.fields import TreeForeignKey
 from taggit.managers import TaggableManager
@@ -12,7 +13,6 @@ from category.models import Category
 class Post(models.Model, HitCountMixin):
     title = models.CharField(max_length=50)
     desc = models.TextField(default='')
-    # category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
     category = TreeForeignKey(Category, null=True, on_delete=models.SET_NULL)
     content = RichTextUploadingField()
     ins_dt = models.DateTimeField(auto_now_add=True)
@@ -26,6 +26,9 @@ class Post(models.Model, HitCountMixin):
 
     def __str__(self):
         return f'Post {self.pk}/{self.title}'
+
+    def get_absolute_url(self):
+        return reverse('post:index', args=[self.pk])
 
 
     def save(self, *args, **kwargs):
