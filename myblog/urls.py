@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls import (
+    handler400, handler403, handler404, handler500
+)
 
 from myblog.sitemaps import PostSitemap
 from myblog.views import HomeView
@@ -26,6 +29,7 @@ from myblog.views import HomeView
 sitemaps = {
     'posts':PostSitemap,
 }
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
@@ -36,3 +40,8 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+handler400 = 'mybloh.view.handler400'
+handler403 = 'mybloh.view.handler403'
+handler404 = 'mybloh.view.handler404'
+handler500 = 'mybloh.view.handler500'
