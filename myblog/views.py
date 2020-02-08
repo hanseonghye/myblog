@@ -21,17 +21,25 @@ class HomeView(TemplateView):
 
 
 
-def handler400(request):
-    return render(request, "error.html", status = 400)
+def handler400(request, exception):
+    data =dict()
+    data['status'] = 400
+    return render(request, "myblog/error.html", data)
 
 
-def handler403(request):
-    return render(request, "error.html", status = 403)
+def handler403(request, exception):
+    data =dict()
+    data['status'] = 403
+    return render(request, "myblog/error.html", data)
 
 
-def handler404(request):
-    return render(request, "error.html", status = 404)
+def handler404(request, exception):
+    data =dict()
+    data['status'] = 404
+    return render(request, "myblog/error.html", data)
 
 
 def handler500(request):
-    return render(request, "error.html", status = 500)
+    data =dict()
+    data['status'] = 500
+    return render(request, "myblog/error.html", data)

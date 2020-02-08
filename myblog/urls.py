@@ -41,7 +41,7 @@ urlpatterns = [
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-handler400 = 'mybloh.view.handler400'
-handler403 = 'mybloh.view.handler403'
-handler404 = 'mybloh.view.handler404'
-handler500 = 'mybloh.view.handler500'
+handler400 = 'myblog.views.handler400'
+handler403 = 'myblog.views.handler403'
+handler404 = 'myblog.views.handler404'
+handler500 = 'myblog.views.handler500'

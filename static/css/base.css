@@ -170,3 +170,7 @@ option {
     font-family: 'jua';
     src: url('/static/font/BMJUA_ttf.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'syntax_t';
+    src: url('/static/font/Syntax_t.ttf') format('truetype');
+}

@@ -1,0 +1,21 @@
+{% extends "myblog/main.html" %}
+
+{% block title %} {% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}
+    <link href="/static/css/myblog/main.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/myblog/home.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block home %}
+    <br/>
+
+    <div class="home width_80p">
+        <div class="home_center">
+            <div style="margin-top:150px;"></div>
+            <p style="font-family:'syntax_t'; font-size: 20pt; ">{{ status }}</p>
+        </div>
+    </div>
+
+{% endblock %}
