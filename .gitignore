@@ -1,4 +1,5 @@
 venv/*
+venv2/*
 static2/*
 __pycache__/*
 */__pycache__/*
@@ -7,7 +8,7 @@ __pycache__/*
 .idea/*
 key.json
 key2.json
-secret_key.json
+settings.json
 local_settings.py
 .env
 */migrations/*

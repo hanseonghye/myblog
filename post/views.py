@@ -25,7 +25,7 @@ class RelatedPostLV(ListView):
     def get_queryset(self):
         tags = self.request.GET.getlist('tags[]')
         now_pk = self.request.GET['now_post']
-        return Post.objects.filter(tags__name__in=tags).exclude(pk=now_pk)
+        return Post.objects.filter(use_tf=True, tags__name__in=tags).exclude(pk=now_pk)
 
 
 class TagLV(ListView):
@@ -43,7 +43,7 @@ class TagPostLV(ListView):
     context_object_name = 'posts'
 
     def get_queryset(self):
-        return Post.objects.filter(tags__id=self.request.GET['tag_id'])
+        return Post.objects.filter(use_tf=True, tags__id=self.request.GET['tag_id'])
 
 
 def getpostper(request):
@@ -56,14 +56,14 @@ def getpostpercategory(request):
     categorys = Category.objects.filter(use_tf=True)
 
     for category in categorys:
-        data["posts"][category.name] = Post.objects.filter(category=category)
+        data["posts"][category.name] = Post.objects.filter(use_tf=True, category=category)
     return render(request, "post/per_category.html", data)
 
 
 def getpostperday(request):
     data = dict()
     data['posts'] = dict()
-    days = Post.objects.filter(ins_dt__month=today.month).annotate(day=ExtractDay('ins_dt')).values('day').distinct()
+    days = Post.objects.filter(use_tf=True, ins_dt__month=today.month).annotate(day=ExtractDay('ins_dt')).values('day').distinct()
     for day in days:
-        data['posts'][day['day']] = Post.objects.filter(ins_dt__day=day['day'])
+        data['posts'][day['day']] = Post.objects.filter(use_tf=True, ins_dt__day=day['day'])
     return render(request, "post/per_day.html", data)

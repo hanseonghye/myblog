@@ -1,9 +1,11 @@
+@import "../base.scss";
+
+
 .content-1 {
     width:90%;
     min-width: 1012px;
     margin: auto;
 }
-
 
 
 div.user1-title {
@@ -14,6 +16,7 @@ div.user1-title {
     font-weight: lighter;
 }
 
+
 div.user1-name {
     font-size: 20px;
     font-style: normal;
@@ -21,6 +24,7 @@ div.user1-name {
     line-height: 24px;
     color: #666;
 }
+
 
 div.user1-desc {
     margin-bottom: 12px;
@@ -52,16 +56,14 @@ div.profile {
 }
 
 
-
-
 div.posts ul.post-list {
     list-style: none;
     padding: 0;
 }
 
 div.outer {
-    border-bottom: 2px solid #A78EB8;
-    border-right:2px solid #A78EB8;
+    border-bottom: 2px solid nth($mainColor,3);
+    border-right:2px solid nth($mainColor,3);
     margin-bottom: 15px;
 }
 
@@ -70,7 +72,7 @@ div.center {
 }
 
 div.inner {
-    border-bottom: 2px solid #ccd9ff;
+    border-bottom: 2px solid nth($mainColor,4);
 }
 
 div.posts ul.post-list li.post {
@@ -197,7 +199,7 @@ p.post-title {
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: #1b5fff;
-    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 #ccd9ff
+    text-shadow: -1px -1px 0px #fff, 2px 2px 0px #fff, 0px 7px 0 nth($mainColor,4)
 }
 
 
@@ -210,7 +212,7 @@ p.purple_border span {
     font-size: 12pt;
     color:#fff;
     font-weight: bold;
-    background-color:#A78EB8;
+    background-color:nth($mainColor,3);
     padding:3px 10px;
     border-radius: 5px;
 }

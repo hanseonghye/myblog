@@ -1,3 +1,9 @@
+$yellow : #FFEDA5;
+$purpleColors: (#E0DDF3, #C9C4E4, #A78EB8, #ccd9ff, #F1F8FF, #43597D, $yellow);
+$witheColors: (#ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, $yellow);
+$mainColor: $witheColors;
+
+
 * {
     box-sizing: border-box;
 }
@@ -11,7 +17,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     min-width: 1020px;
     display: block;
-    background: #E0DDF3;
+    background: nth($mainColor,1);
     height: 100%;
 }
 
@@ -36,8 +42,8 @@ nav ul li {
     padding: 0;
     height: 50px;
     color: #ffffff;
-    background-color: #43597D;
-    border-bottom: 5px solid #FFEDA5;
+    background-color: nth($mainColor,6);
+    border-bottom: 5px solid $yellow;
 }
 
 nav ul li:first-child {
@@ -59,7 +65,7 @@ nav ul li a {
 
 nav ul li a:hover {
     font-weight: bold;
-    color: #FFEDA5;
+    color: $yellow;
 }
 
 div.col-md-12 {
@@ -113,7 +119,7 @@ div, span, a, p, h3, h4, h5 {
 
 hr.yellow_hr {
     clear: both;
-    border: solid 2px #FFEDA5;
+    border: solid 2px $yellow;
 }
 
 hr.white_hr {
