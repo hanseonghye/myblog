@@ -34,7 +34,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', settings['debug']))
 if settings['mode'] == 'dev':
   ALLOWED_HOSTS = ['*']
 else:
-  ALLOWED_HOSTS = [settings['allowed_hosts']]
+  ALLOWED_HOSTS = ['devpunch.xyz']
 
 # Application definition
 
