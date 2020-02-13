@@ -65,6 +65,7 @@ INSTALLED_APPS = [
   'sass_processor',
 ]
 
+
 MIDDLEWARE = [
   'django.middleware.security.SecurityMiddleware',
   'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -145,15 +146,13 @@ DISQUS_WEBSITE_SHORTNAME = 'pythonweb-4'
 
 CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-# CKEDITOR_CONFIGS = {
-#   'default': {
-#     'toolbar': 'none',
-#     'extraPlugins': ','.join(
-#       ['codesnipper', ],
-#     ),
-#     'allowedContent': True
-#   }
-# }
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+        'extraPlugins': 'codesnippet',
+    },
+}
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
