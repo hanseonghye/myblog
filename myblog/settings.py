@@ -28,13 +28,13 @@ with open(SETTINGS_PATH) as f:
 SECRET_KEY = settings['secret_key']
 KEY_PATH = os.path.join(BASE_DIR + '/key.json')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', settings['debug']))
 
 if settings['mode'] == 'dev':
   ALLOWED_HOSTS = ['*']
+  DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 else:
   ALLOWED_HOSTS = ['devpunch.xyz']
+  DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
 
 # Application definition
 

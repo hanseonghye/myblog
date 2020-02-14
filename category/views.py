@@ -10,7 +10,6 @@ def getallcategory(request):
     data = dict()
     data['categorys'] = Category.objects.filter(use_tf=True).annotate(posts_count=Count('post')).order_by('tree_id', 'level', 'orderlv')
     data['all_count'] = Post.objects.filter(use_tf=True).count
-    print (data['categorys'])
     return render(request, "myblog/set_category.html", data)
 
 
