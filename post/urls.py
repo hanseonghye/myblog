@@ -1,6 +1,4 @@
 from django.urls import path
-
-from category.models import Category
 from post.views import PostDV, RelatedPostLV, TagLV, TagPostLV, getpostper, getpostpercategory, getpostperday
 
 app_name = "post"

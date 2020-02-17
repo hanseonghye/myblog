@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /static/
+
+Sitemap: https://devpunch.xyz/sitemap.xml

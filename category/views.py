@@ -20,7 +20,7 @@ class CategoryPostLV(ListView):
 
     def get_queryset(self):
         if self.kwargs['pk'] == 0:
-            return Post.objects.filter(use_tf=True);
+            return Post.objects.filter(use_tf=True)
         else:
             return Post.objects.filter(category=self.kwargs['pk'], use_tf=True)
 
@@ -40,7 +40,7 @@ class CategoryNamePostLV(ListView):
     context_object_name = "posts"
 
     def get_queryset(self):
-        return Post.objects.filter(category__name=self.kwargs['name'], use_tf=True);
+        return Post.objects.filter(category__name=self.kwargs['name'], use_tf=True)
 
     def get_context_data(self, *args, **kwargs):
         data = super(CategoryNamePostLV, self).get_context_data(*args, **kwargs)
