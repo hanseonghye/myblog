@@ -7,4 +7,5 @@ script:
   - fuser -k 8000/tcp
   - source /home/hans/myblog/venv/bin/activate
   - nohup  gunicorn --bind 0.0.0.0:8000 myblog.wsgi &
+  - echo end
 
