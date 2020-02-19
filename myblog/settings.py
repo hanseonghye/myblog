@@ -21,9 +21,6 @@ SETTINGS_PATH = os.path.join(BASE_DIR + '/settings.json')
 with open(SETTINGS_PATH) as f:
   settings = json.loads(f.read())
 
-# SECRET_KEY_PATH = os.path.join(BASE_DIR + '/secret_key.json')
-# with open(SECRET_KEY_PATH) as f:
-#   secrets = json.loads(f.read())
 
 SECRET_KEY = settings['secret_key']
 KEY_PATH = os.path.join(BASE_DIR + '/key.json')
@@ -124,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -149,7 +146,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
-        'extraPlugins': 'codesnippet',
+        'extraPlugins': ['codesnippet', 'toc'],
     },
 }
 
