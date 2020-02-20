@@ -9,7 +9,7 @@ from category.models import Category
 
 
 class Post(models.Model, HitCountMixin):
-  title = models.CharField(max_length=50)
+  title = models.CharField(max_length=100)
   desc = models.CharField(max_length=100, null=True, blank=True)
   category = TreeForeignKey(Category, null=True, on_delete=models.SET_NULL)
   content = RichTextUploadingField()

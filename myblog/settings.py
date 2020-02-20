@@ -146,7 +146,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
-        'extraPlugins': ['codesnippet', 'toc'],
+        'extraPlugins': ['codesnippet', 'toc', 'markdown'],
     },
 }
 
