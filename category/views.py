@@ -1,4 +1,4 @@
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.shortcuts import render
 from django.views.generic import ListView
 
@@ -8,7 +8,9 @@ from post.models import Post
 
 def getallcategory(request):
     data = dict()
-    data['categorys'] = Category.objects.filter(use_tf=True).annotate(posts_count=Count('post')).order_by('tree_id', 'level', 'orderlv')
+    data['categorys'] = Category.objects.filter(use_tf=True).annotate(posts_count=Count('post')).order_by('tree_id',
+                                                                                                          'level',
+                                                                                                          'orderlv')
     data['all_count'] = Post.objects.filter(use_tf=True).count
     return render(request, "myblog/set_category.html", data)
 
@@ -22,7 +24,8 @@ class CategoryPostLV(ListView):
         if self.kwargs['pk'] == 0:
             return Post.objects.filter(use_tf=True)
         else:
-            return Post.objects.filter(category=self.kwargs['pk'], use_tf=True)
+            return Post.objects.filter(Q(category=self.kwargs['pk']) | Q(category__parent=self.kwargs['pk']),
+                                       use_tf=True)
 
     def get_context_data(self, *args, **kwargs):
         data = super(CategoryPostLV, self).get_context_data(*args, **kwargs)

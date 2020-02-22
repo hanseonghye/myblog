@@ -12,9 +12,15 @@
         {% define 'padding-left:10px;' as style %}
     {% endif %}
 
+    {% if category.posts_count == 0 %}
+        {% define ' ' as count %}
+    {% else %}
+        {% define2 category.posts_count as count %}
+    {% endif %}
+
     <p class="cate category" style="{{ style }}">
         <a href="{% url 'category:index' category.pk %}">
-            {{ category.name }} ({{ category.posts_count }})
+            {{ category.name }} {{ count }}
         </a>
     </p>
 {% endfor %}
