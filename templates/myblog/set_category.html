@@ -1,5 +1,5 @@
 {% load custom_tags %}
-<p class="cate title">
+<p style="font-weight:bold;" class="cate title">
     <a href="{% url 'category:index' 0 %}">
     _ALL ({{ all_count }})
     </a>
@@ -7,9 +7,9 @@
 {% for category in categorys %}
 
     {% if category.level == 0 %}
-        {% define 'font-weight:bold;' as style %}
+        {% define '' as style %}
     {% else %}
-        {% define 'padding-left:10px;' as style %}
+        {% define 'padding-left:15px;' as style %}
     {% endif %}
 
     <p class="cate category" style="{{ style }}">
