@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load custom_tags %}
 <p style="font-weight:bold;" class="cate title">
     <a href="{% url 'category:index' 0 %}">
@@ -20,3 +21,27 @@
         </a>
     </p>
 {% endfor %}
+=======
+{% load custom_tags %}
+<p style="font-weight:bold;" class="cate title">
+    <a href="{% url 'category:index' 0 %}">
+    _ALL ({{ all_count }})
+    </a>
+</p>
+{% for category in categorys %}
+
+    {% if category.level == 0 %}
+        {% define '' as style %}
+        {% define '' as plus %}
+    {% else %}
+        {% define 'padding-left:15px;' as style %}
+        {% define '----' as plus %}
+    {% endif %}
+
+    <p class="cate category" style="{{ style }}">
+        <a href="{% url 'category:index' category.pk %}">
+            {{plus}} {{ category.name }} ({{ category.posts_count }})
+        </a>
+    </p>
+{% endfor %}
+>>>>>>> 7bd8fc637a1c465d4bddff6a45c3d7d672ff3bca
