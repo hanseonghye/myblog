@@ -8,13 +8,15 @@
 
     {% if category.level == 0 %}
         {% define '' as style %}
+        {% define '' as plus %}
     {% else %}
         {% define 'padding-left:15px;' as style %}
+        {% define '----' as plus %}
     {% endif %}
 
     <p class="cate category" style="{{ style }}">
         <a href="{% url 'category:index' category.pk %}">
-            {{ category.name }} ({{ category.posts_count }})
+            {{plus}} {{ category.name }} ({{ category.posts_count }})
         </a>
     </p>
 {% endfor %}
