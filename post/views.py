@@ -29,8 +29,10 @@ class RelatedPostLV(ListView):
         tags = post.get_tag.filter()
         if len(tags) > 0:
             posts = Post.objects.filter(use_tf=True, tags__in=tags).exclude(pk=now_pk).distinct("pk")
+            print(posts)
             return posts
 
+        print ("none")
         return None
 
 
