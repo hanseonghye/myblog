@@ -1,38 +1,11 @@
 {% if posts %}
 {% for day, ps in posts.items %}
 {% if ps %}
-<li class="post-category">
-    <p class="purple_border"><span style="font-family: 'Noto Sans KR';">{{ ps.0.ins_dt | date:'Y-m-d' }}</span></p>
-    <ul class="post-list">
-        {% for post in ps %}
-        <div class="outer width_50p">
-            <div class="center">
-                <div class="inner">
-                    <li class="post">
-                        <h3 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h3>
-                        <div class="parent">
-                            {% if post.get_tag %}
-                            <div>
-                                <ul class="tag-list">
-                                    {% for tag in post.get_tag %}
-                                    <li>{{ tag }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            {% endif %}
-                            <div class="post-info">
-                                <p>{{ post.ins_dt }}</p>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </ul>
-    <br/>
-</li>
+<p class="purple_border"><span style="font-family: 'Noto Sans KR';">{{ ps.0.ins_dt | date:'Y-m-d' }}</span></p>
+<ul class="post-list">
+    {% include "post/post_list.html" with posts=ps %}
+</ul>
+<br/>
 {% endif %}
-
 {% endfor %}
 {% endif %}

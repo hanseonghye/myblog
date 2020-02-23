@@ -1,0 +1,25 @@
+{% for post in posts %}
+<div class="outer width_50p">
+    <div class="center">
+        <div class="inner">
+            <li class="post">
+                <h3 class="post_title"><a href="{% url 'post:index' post.pk %}">{{ post.title }}</a></h3>
+                <div class="parent">
+                    {% if post.get_tag %}
+                    <div>
+                        <ul class="tag-list">
+                            {% for tag in post.get_tag %}
+                                <li>{{ tag }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    <div class="post-info">
+                        <p>{{ post.ins_dt }}</p>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </div>
+</div>
+{% endfor %}

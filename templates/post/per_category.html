@@ -1,30 +1,14 @@
 {% if posts %}
 
-    {% for category, ps in posts.items %}
-        {% if ps %}
-            <li class="post-category">
-            <p class="purple_border"><span style=" font-family: 'Noto Sans KR';">{{ category }}</span></p>
-
-            {% for p in ps %}
-                    {% if p.get_tag %}
-                        <ul class="tag-list inline">
-                            <h4 class="inline post_title padding-right"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h4>
-                            {% for tag in p.get_tag %}
-                                <li class="inline">{{ tag }}</li>
-                            {% endfor %}
-<!--                            <h4 class="inline post_date">{{ p.ins_dt }}</h4>-->
-                        </ul>
-                    {% else %}
-                        <h4 class="inline post_title"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h4>
-<!--                        <ul class="tag-list inline">-->
-<!--                            <h4 style="margin-left:80px;" class="inline post_date">{{ p.ins_dt }}</h4>-->
-<!--                        </ul>-->
-                    {% endif %}
-                <br/>
-            {% endfor %}
-            <br/>
-        {% endif %}
-        </li>
-
-    {% endfor %}
+{% for category, ps in posts.items %}
+{% if ps %}
+<li class="post-category">
+    <p class="purple_border"><span style=" font-family: 'Noto Sans KR';">{{ category }}</span></p>
+    <ul class="post-list">
+        {% include "post/post_list.html" with posts=ps %}
+    </ul>
+    <br/>
+    {% endif %}
+</li>
+{% endfor %}
 {% endif %}
