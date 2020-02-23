@@ -27,12 +27,11 @@ class RelatedPostLV(ListView):
         now_pk = self.request.GET['now_post']
         post = Post.objects.get(pk=now_pk)
         tags = post.get_tag.filter()
-        print (tags[0])
-        realted_post = Post.objects.filter(use_tf=True, tags__in=tags).exclude(pk=now_pk)
-        print (realted_post)
-        print (realted_post.query)
-        return realted_post
-        # return None
+        if len(tags) > 0:
+            posts = Post.objects.filter(use_tf=True, tags__in=tags).exclude(pk=now_pk).distinct("pk")
+            return posts
+
+        return None
 
 
 class TagLV(ListView):

@@ -117,6 +117,12 @@ ul.tag-list li a {
     text-decoration: none;
  }
 
+div.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 div.posts div.post-info{
     padding-top: 5px;
     font-size: 12px;

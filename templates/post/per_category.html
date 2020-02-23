@@ -12,13 +12,13 @@
                             {% for tag in p.get_tag %}
                                 <li class="inline">{{ tag }}</li>
                             {% endfor %}
-                            <h4 class="inline post_date">{{ p.ins_dt }}</h4>
+<!--                            <h4 class="inline post_date">{{ p.ins_dt }}</h4>-->
                         </ul>
                     {% else %}
                         <h4 class="inline post_title"><a href="{% url 'post:index' p.pk %}">{{ p.title }}</a></h4>
-                        <ul class="tag-list inline">
-                            <h4 style="margin-left:80px;" class="inline post_date">{{ p.ins_dt }}</h4>
-                        </ul>
+<!--                        <ul class="tag-list inline">-->
+<!--                            <h4 style="margin-left:80px;" class="inline post_date">{{ p.ins_dt }}</h4>-->
+<!--                        </ul>-->
                     {% endif %}
                 <br/>
             {% endfor %}
