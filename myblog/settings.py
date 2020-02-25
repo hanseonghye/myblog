@@ -168,3 +168,17 @@ MEDIA_URL = '/media/'
 # SASS_ROOT = STATIC_ROOT
 # SASS_PROCESSOR_ROOT = STATIC_ROOT
 # SASS_PROCESSOR_ENABLED = True
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {"handlers": ["console"], "level": "INFO"},
+    },
+}

@@ -8,6 +8,7 @@ from hitcount.views import HitCountDetailView
 from category.models import Category
 from post.models import Post
 
+
 today = datetime.datetime.now()
 
 
@@ -28,11 +29,9 @@ class RelatedPostLV(ListView):
         post = Post.objects.get(pk=now_pk)
         tags = post.get_tag.filter()
         if len(tags) > 0:
-            posts = Post.objects.filter(use_tf=True, tags__in=tags).exclude(pk=now_pk).distinct("pk")
-            print(posts)
+            posts = Post.objects.filter(use_tf=True, tags__in=tags).exclude(pk=now_pk).distinct("pk").order_by("pk")
             return posts
 
-        print ("none")
         return None
 
 
