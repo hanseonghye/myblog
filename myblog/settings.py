@@ -21,10 +21,8 @@ SETTINGS_PATH = os.path.join(BASE_DIR + '/settings.json')
 with open(SETTINGS_PATH) as f:
   settings = json.loads(f.read())
 
-
 SECRET_KEY = settings['secret_key']
 KEY_PATH = os.path.join(BASE_DIR + '/key.json')
-
 
 if settings['mode'] == 'dev':
   ALLOWED_HOSTS = ['*']
@@ -61,7 +59,6 @@ INSTALLED_APPS = [
   'mptt',
   'sass_processor',
 ]
-
 
 MIDDLEWARE = [
   'django.middleware.security.SecurityMiddleware',
@@ -144,12 +141,12 @@ DISQUS_WEBSITE_SHORTNAME = 'pythonweb-4'
 CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': None,
-        'extraPlugins': ['codesnippet', 'toc', 'markdown'],
-    },
+  'default': {
+    'toolbar': None,
+    'extraPlugins': ['codesnippet', 'toc', 'markdown'],
+    'codeSnippet_theme': 'monokai_sublime',
+  },
 }
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -171,14 +168,14 @@ MEDIA_URL = '/media/'
 
 
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-        },
+  "version": 1,
+  "disable_existing_loggers": False,
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
     },
-    "loggers": {
-        "django": {"handlers": ["console"], "level": "INFO"},
-    },
+  },
+  "loggers": {
+    "django": {"handlers": ["console"], "level": "INFO"},
+  },
 }
