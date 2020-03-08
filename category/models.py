@@ -11,11 +11,6 @@ class Category(MPTTModel):
     class Meta:
         db_table = "category_category"
 
-    def get_num_children(self):
-        return self.get_children().count()
-
-    # def count_post(self):
-    #     return self.
 
     def __str__(self):
         return self.name

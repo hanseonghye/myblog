@@ -2,13 +2,7 @@ from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
 from category.models import Category
-
-# class CategoryAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'orderlv', 'use_tf')
-
-
 from post.models import Post
-
 
 class CategoryAdmin(DraggableMPTTAdmin):
     mptt_indent_field = "name"
@@ -30,7 +24,7 @@ class CategoryAdmin(DraggableMPTTAdmin):
         # Add non cumulative product count
         qs = Category.objects.add_related_count(qs,
                  Post,
-                 'categories',
+                 'category',
                  'products_count',
                  cumulative=False)
         return qs
@@ -43,4 +37,4 @@ class CategoryAdmin(DraggableMPTTAdmin):
         return instance.products_cumulative_count
     related_products_cumulative_count.short_description = 'Related products (in tree)'
 
-admin.site.register(Category, DraggableMPTTAdmin)
+admin.site.register(Category, CategoryAdmin)
