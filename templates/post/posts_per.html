@@ -1,8 +1,8 @@
 {% extends "myblog/main.html" %}
+{% load staticfiles %}
 
 {% block title %}{% endblock %}
 
-{% load staticfiles %}
 {%  block extrastyle %}
 <!--    <link href="/static/css/myblog/show_post.css" rel="stylesheet" type="text/css">-->
 {% endblock %}
@@ -23,6 +23,6 @@
 
 
 {% block extrascript %}
-    <script src="/static/js/get_category.js"></script>
-    <script src="/static/js/get_post_per.js"></script>
+    <script src="{% static 'js/get_category.js' %}"></script>
+    <script src="{% static 'js/get_post_per.js' %}"></script>
 {% endblock %}

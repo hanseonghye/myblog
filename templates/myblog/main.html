@@ -1,8 +1,8 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block title %} {% endblock %}
 
-{% load staticfiles %}
 
 {% block extrastyle %}
 {% endblock %}
@@ -84,6 +84,5 @@
 {% endblock %}
 
 {% block extrascript %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/static/js/get_category.js"></script>
+    <script src="{% static 'js/get_category.js' %}"></script>
 {% endblock %}

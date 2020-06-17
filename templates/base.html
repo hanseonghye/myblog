@@ -1,7 +1,9 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <link rel="icon" href="/static/css/favicon.png">
+    <link rel="icon" href="{% static 'css/favicon.png' %}">
 
     <meta charset="UTF-8">
     <title>
@@ -10,11 +12,10 @@
         개발 도장깨기
     </title>
 
-    {% load staticfiles %}
     <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/static/css/myblog/category.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/myblog/category.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
